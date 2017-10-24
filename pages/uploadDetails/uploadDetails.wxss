@@ -1,0 +1,107 @@
+@charset 'utf-8';
+/*
+ * travel  v1.0.0  
+ * copyRight 2017-05-23
+ * */
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border-style: solid;
+  white-space: nowrap;
+  padding: 19rpx 51rpx;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  border-width: 2rpx;
+  border-radius: 24rpx;
+}
+.btn-default {
+  color: #fc3b22;
+  background-color: #fff;
+  border-color: #fff;
+}
+page {
+  background-color: #fff;
+}
+.upload .warning {
+  padding-top: 40rpx;
+  padding-bottom: 20rpx;
+  padding-left: 20rpx;
+  color: #999999;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  border-bottom: 1rpx solid #e1e1e1;
+}
+.upload .upload-img {
+  padding-left: 20rpx;
+}
+.upload .upload-img .title {
+  margin-top: 40rpx;
+  color: #282828;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
+.upload .upload-img .add-img .add-i {
+  display: flex;
+  justify-content: flex-start;
+}
+.upload .upload-img .add-img .add-i .add {
+  width: 230rpx;
+  height: 230rpx;
+  border: 1rpx dashed #afafaf;
+  color: #999999;
+  font-size: 100rpx;
+  text-align: center;
+  padding-top: 65rpx;
+  box-sizing: border-box;
+  padding-left: 65rpx;
+}
+.upload .upload-img .add-img .add-i .add .add-text {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.upload .upload-img .add-img .add-i .img-item {
+  margin-left: 10rpx;
+  width: 230rpx;
+  height: 230rpx;
+  display: block;
+  position: relative;
+}
+.upload .upload-img .add-img .add-i .img-item .img-img {
+  width: 230rpx;
+  height: 230rpx;
+}
+.upload .upload-img .add-img .add-i .img-item .delete {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40rpx;
+  color: #fff;
+  background-color: #afafaf;
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  z-index: 100;
+}
+.upload .upload-img .add-img .submit {
+  margin-top: 412rpx;
+}
+.upload .upload-img .add-img .submit button {
+  background-color: #fc3b22;
+  width: 540rpx;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

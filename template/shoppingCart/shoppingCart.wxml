@@ -1,0 +1,212 @@
+  
+
+<!--产品的模板-->
+<template name = 'product'>
+    <view    class = 's-item' data-index = '{{index}}'>
+       <!--选择按钮-->
+        <view class = 's-btn-l' >
+            <view class = 's-btn-c' data-index = '{{index}}'  bindtap = 'selectList'>
+                <view class = 's-btn-nochecked' wx:if ='{{!selected}}'></view>
+                <view class = 's-btn-checked' wx:if ='{{selected}}'>
+                  <image src = '../../images/cart_pick.png' class = 'icon' ></image>  
+                </view>
+            </view>
+        </view>
+        <!--icon-->
+        <view class = 's-icon'><image src = '{{img}}' class = 's-icon-img'></image></view>
+            <view class = 's-item-detail'>
+                <view class = 's-i-t'>{{title}}</view> 
+                <view class = 's-i-startDate'>
+                    {{depart_time}}
+                </view>
+                <view class = 's-i-p-n'>
+                    <view class = 's-i-p'>
+                                                    ￥{{discount}}
+                    </view>
+                    <view class = 's-i-n'>
+                        X{{nu}}
+                    </view>
+                </view>       
+            </view> 
+            
+            <!--删除-->
+            
+            <!--<view class = 's-item-delete' bindtap = 'showModel' data-index = '{{index}}' data-self = 'self'>
+                                        删除
+            </view>-->
+    </view>
+    <view class = 'gx'></view>
+</template>
+
+<!--产品编辑模板-->
+<template name = 'productEditor'>
+    <view  class = 's-item' data-index = '{{index}}' style='overflow-x:hidden' >
+       <!--选择按钮-->
+        <view class = 's-btn-l' >
+            <view class = 's-btn-c' data-index = '{{index}}'  bindtap = 'selectList'>
+                <view class = 's-btn-nochecked' wx:if ='{{!selected}}'></view>
+                <view class = 's-btn-checked' wx:if ='{{selected}}'>
+                   <image src = '../../images/cart_pick.png' class = 'icon' ></image>
+                </view>
+            </view>
+        </view>
+        
+        <!--icon-->
+        <view class = 's-icon'><image src = '{{img}}' class = 's-icon-img'></image></view>
+            <!--商品详情-->
+            <view class = 's-item-detail-d'>
+                <view class = 's-i-compute'>
+                    
+                    <view class = 's-i-c-cut' data-index = '{{index}}' bindtap = 'minusCount' wx:if= '{{ nu<2 }}'>
+                      -
+                    </view>
+                    <view class = 's-i-c-cut-d' data-index = '{{index}}' bindtap = 'minusCount' wx:if= '{{ nu>=2 }}'>
+                      -
+                    </view>
+                    <view class = 's-i-c-num'>
+                        {{nu}}
+                    </view>
+                    <view class = 's-i-c-add' data-index = '{{index}}' bindtap = 'addCount'>
+                        + 
+                    </view>
+                </view> 
+                
+              <view class = 's-i-startDate'>
+                  {{depart_time}}
+              </view>
+               
+              <view class = 's-i-p-n'>
+                  <view class = 's-i-p'>
+                                                      ￥{{discount}}
+                  </view>
+              </view> 
+            </view> 
+            <!--删除-->
+            <view class = 's-item-delete s-item-d-d'  data-index = '{{index}}' bindtap = 'showModel'>
+                                        删除
+            </view>
+    </view>
+    <view class = 'gx'></view>
+</template>
+
+
+<template name = 'visa'>
+    <view    class = 's-item'  data-index = '{{index}}' >
+       <!--选择按钮-->
+        <view class = 's-btn-l'>
+            <view class = 's-btn-c' data-index = '{{index}}' bindtap = 'selectList'>
+                <view class = 's-btn-nochecked' wx:if ='{{!selected}}'></view>
+                <view class = 's-btn-checked' wx:if ='{{selected}}'>
+                    <image src = '../../images/cart_pick.png' class = 'icon' ></image>
+                </view>
+            </view>    
+        </view>
+        <!--icon-->
+        <view class = 's-icon'><image src = '{{img}}' class = 's-icon-img'></image></view>
+            <!--商品详情-->
+            <view class = 's-item-detail'>
+                <view class = 's-i-t'>签证：{{title}}</view> 
+           
+                <view class = 's-i-startDate'>
+                   {{visa_type}}
+                   <block wx:if = '{{area != null}}'> ：{{area}}</block>
+                    {{visa_type}}
+                </view>
+           
+                <view class = 's-i-p-n'>
+                    <view class = 's-i-p'>
+                                                       ￥{{discount}}
+                    </view>
+                    <view class = 's-i-n'>
+                        X{{nu}}
+                    </view>
+                </view>       
+            </view> 
+            <!--删除-->
+            <!--<view class = 's-item-delete' bindtap = 'showModel' data-index = '{{index}}'>
+                                        删除
+            </view>-->
+    </view>
+    <view class = 'gx'></view>
+</template>
+
+
+<!--签证编辑模板-->
+<template name = 'visaEditor'>
+    <view    class = 's-item'  data-index = '{{index}}' style='overflow-x:hidden'>
+       <!--选择按钮-->
+        <view class = 's-btn-l'>
+            <view class = 's-btn-c' data-index = '{{index}}' bindtap = 'selectList'>
+                <view class = 's-btn-nochecked' wx:if ='{{!selected}}'></view>
+                <view class = 's-btn-checked' wx:if ='{{selected}}'>
+                    <image src = '../../images/cart_pick.png' class = 'icon' ></image>
+                </view>
+            </view>    
+            
+        </view>
+        
+        <!--icon-->
+        <view class = 's-icon'><image src = '{{img}}' class = 's-icon-img'></image></view>
+            <!--商品详情-->
+            <view class = 's-item-detail-d'>
+               <view class = 's-i-compute'>
+                    <view class = 's-i-c-cut' data-index = '{{index}}' bindtap = 'minusCount' wx:if= '{{ nu<2 }}'>
+                      -
+                    </view>
+                    <view class = 's-i-c-cut-d' data-index = '{{index}}' bindtap = 'minusCount' wx:if= '{{ nu>=2 }}'>
+                      -
+                    </view>
+                    <view class = 's-i-c-num'>
+                        {{nu}}
+                    </view>
+                    <view class = 's-i-c-add' data-index = '{{index}}' bindtap = 'addCount'>
+                        + 
+                    </view>
+               </view> 
+           
+                <view class = 's-i-startDate'>
+                    <block wx:if = '{{visa_type !=nujll}}'>{{visa_type}}</block>
+                    
+                    <block wx:if = '{{area != null}}'> ：{{area}}</block>
+                    
+                </view>
+               
+                <view class = 's-i-p-n'>
+                    <view class = 's-i-p'>
+                                                 ￥{{discount}}                                     
+                    </view>
+                </view> 
+            </view> 
+            <!--删除-->
+            <view class = 's-item-delete s-item-d-d' bindtap = 'showModel' data-index = '{{index}}' data-self = 'self'>
+                                        删除
+            </view>
+    </view>
+    <view class = 'gx'></view>
+</template>
+
+
+<template name = 'shoppingCarPay'>
+    <view class = 'shoppingCart'>
+        <view class = 's-c-choose' bindtap ='selectAll'>
+            <view class = 's-btn-cart'>
+                <view class = 's-btn-nochecked' wx:if ='{{!selectAllStatus}}'></view>
+                <view class = 's-btn-checked' wx:if ='{{selectAllStatus}}'>
+                    <image src = '../../images/cart_pick.png' class = 'icon' ></image>
+                </view>
+            </view>
+            <view class = 's-c-text'>
+                                        全选
+            </view>
+        </view>
+        
+        <view class = 's-c-price'>
+                    ￥{{totalPrice}}
+        </view>
+        
+        
+        <view class = 's-c-pay' wx:if = '{{hasEditor}}' bindtap = 'showModel' data-self = 'all' data-index = 'null'>删除</view>
+        <view class = 's-c-pay' wx:if = '{{!hasEditor}}' bindtap = 'getToPay'>结算</view>
+    </view>
+</template>
+

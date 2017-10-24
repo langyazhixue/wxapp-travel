@@ -1,0 +1,23 @@
+<import src ='../../template/travelStrategy/travelStrategy.wxml' />
+<view class = 'line-all'></view>
+<block wx:if = '{{data.error == 1}}'>
+        <view class = 'error'>
+            <image src = '../../images/20170711007_194x194.png'></image>
+            <view>数据加载失败</view>         
+        </view>
+</block>
+
+<block wx:elif = '{{data.error == 0}}'>
+    <block wx:if = '{{data.data == null }}'>
+        <view class = 'error'>
+            <image src = '../../images/20170711003_194x194.png'></image>
+            <view>数据为空</view>
+        </view>
+    </block>
+    
+    <block wx:else>
+        <block wx:for = '{{data.data}}'>
+            <template is = 'strategy' data = '{{...item}}'></template>
+        </block>
+    </block>
+</block>

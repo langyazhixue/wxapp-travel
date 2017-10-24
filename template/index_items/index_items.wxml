@@ -1,0 +1,35 @@
+
+<!--index_items-->
+
+<!--more than four-->
+
+<template name = 'index-items-morethanfour'>
+    <view class = 'ii-trvel-icon-item' data-link = "{{link+'?id='+id}}" bindtap = 'go'>
+        <button type="button" class='ii-b-c' >
+            <image src = '{{icon}}' class='ii-tiim' ></image>
+            <text>{{title}}</text>
+        </button>
+    </view>
+</template>
+
+
+<!--less than four-->
+
+<template name = 'index-items-lessthanfour'>
+    <view class ='trvel-icon-item-1' data-link = "{{link+'?id='+id}}" bindtap = 'go'>
+        <button type = "button" class = 'ii-b-c' >
+            <image src ='{{icon}}' class = 'ii-tiim' ></image>
+            <text>{{title}}</text>
+        </button>
+    </view>
+</template>
+
+
+
+
+
+
+
+
+
+

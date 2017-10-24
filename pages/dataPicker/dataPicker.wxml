@@ -1,0 +1,75 @@
+<view class = 'line-all'></view>
+<template name = 'dataPicker' >
+    
+    <view class = 'ui-dataPicker-item'>
+        <view class = 'ui-dataPicker-item-header'>
+            {{year}}年{{month}}月
+        </view>
+        
+        <view class = 'ui-dataPicker-item-body' >
+            <block wx:for = '{{ret}}'>
+                <block wx:if = '{{item.showOnPage}}'>
+                    <!--要显示时间价格-->
+                    <block  wx:if = '{{item.show && item.startDay}}'>
+                        <block wx:if ='{{item.afterToday}}'>
+                            <view class = 'item'  hover-class='hover-style'  data-startDay ='{{item.yearMonthDay}}'  data-date = '{{item.showData}}'
+                                data-price= '{{item.price}}' data-hasdiscount = "{{item.hasDiscount}}" bindtap = 'chooseData'>
+                            <span class = 'itme-date'>{{item.showData}}</span> 
+                            <span  class = 'item-price-d' hover-class = 'hover-style-1' wx:if ='{{item.hasDiscount}}'>￥{{item.price}}</span>
+                            <span class = 'item-price' wx:else>￥{{item.price}}</span> 
+                            </view>
+                        </block>
+                        <!--只需要显示时间-->
+                        <block wx:if ='{{!item.afterToday}}'>
+                            <view class = 'item'  style = 'color:#999'>
+                                <span class = 'itme-date'>{{item.showData}}</span> 
+                                <span class = 'item-price'></span> 
+                            </view>
+                        </block>
+                    </block>
+                    
+                    <!--只需要显示时间-->
+                    <block wx:elif = '{{item.show && !item.startDay}}'>
+                        <view class = 'item'   style = 'color:#999'>
+                            <span class = 'itme-date'>{{item.showData}}</span> 
+                            <span class = 'item-price'></span> 
+                        </view>
+                    </block>
+                     
+                     <!--占位置-->
+                    <block wx:else>
+                        <view class = 'item'  > 
+                            <span class = 'itme-date'></span> 
+                            <span class = 'item-price'></span>
+                        </view>
+                    </block>
+                    
+                    
+                </block>
+            </block>
+            
+        </view>
+    </view>
+    
+</template>
+
+
+<view class = 'ui-dataPicker-wrap'>
+    <!--头部-->
+    <view class = 'ui-dataPicker-header' style='width:{{windowWidth}}'>
+        <view >日</view>
+        <view>一</view>
+        <view>二</view>
+        <view>三</view>
+        <view>四</view>
+        <view>五</view>
+        <view>六</view>
+    </view> 
+    <!--body-->
+   <view class = 'ui-dataPicker-body'>
+        <block wx:for = '{{data}}' >
+            <template is = 'dataPicker' data ='{{...item}}' ></template>
+        </block>
+        
+   </view>
+</view>

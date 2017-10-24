@@ -1,0 +1,52 @@
+
+<import src ="../../template/travelStrategyDetails/travelStrategyDetails.wxml" />
+<view class = 'line-all'></view>
+<block wx:if = '{{FirsthasError == 1}}'>
+        <view class = 'error'>
+            <image src = '../../images/20170711007_194x194.png'></image>
+            <view>数据加载失败</view>         
+        </view>
+</block>
+
+<block wx:else>
+    <block wx:if = '{{hasData == null }}'>
+        <view class = 'error'>
+            <image src = '../../images/20170711003_194x194.png'></image>
+            <view>数据为空</view>
+        </view>
+    </block>
+    
+    <block wx:else>
+        <block wx:if = '{{data_title != null}}'>
+            <!--头部信息-->
+            <scroll-view scroll-y = 'true' style = 'height:{{height}}'  lower-threshold = '40' bindscrolltolower = 'scrolltolower'>
+                <view class = 'header'>
+                    <view id="title" style="">
+                        {{data_title.title}}
+                    </view>
+                    <view id="time" style="">
+                        <text>{{data_title.ts}}</text>
+                        <text id="scan">阅读:{{data_title.scan}}</text>
+                    </view>
+                    <view class = 'des1'>
+                        {{data_title.des}}
+                    </view>
+                </view>
+                <view class = 'content'>
+                    <block wx:if = '{{data.length !=0}}'>
+                        <block wx:for = '{{data}}'>
+                            <template is = 'tsd-list' data = '{{...item,index:index}}'></template>
+                        </block>
+                    </block>
+                    <view   class = 'load' wx:if = '{{loading}}'>
+                        <text class = 't'>加载中...</text>
+                        <image src = '../../images/1.gif' class = 't-img'></image>
+                    </view>
+                    <view wx:if = '{{ending}}' class = 'end'>数据已到底部</view>
+                </view>
+            </scroll-view>
+        </block>
+    </block>
+</block>
+
+

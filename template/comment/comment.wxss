@@ -1,0 +1,59 @@
+
+
+.c-contianer{
+    background-color:#ffffff;
+    padding:30rpx 20rpx 36rpx 20rpx;
+    border-bottom:solid 1rpx #e1e1e1;
+}
+
+.c-contianer .num{
+    font-size:26rpx;
+    color:#282828;
+}
+
+.c-contianer .c-box{
+    margin:36rpx 0rpx 20rpx 0rpx;
+}
+.c-contianer .c-box .t{
+    height: 40rpx;
+    margin-bottom:20rpx;
+}
+
+
+.c-contianer .c-box .t .icon{
+    width:40rpx;
+    height:40rpx;
+    margin-right:20rpx;
+}
+
+.c-contianer .c-box .t .username{
+    font-size: 24rpx;
+    color:#666;
+    line-height: 40rpx;
+    vertical-align:top;
+    display:inline-block;
+
+}
+.c-contianer .c-box .content{
+    color:#282828;
+    font-size: 24rpx;
+    word-break: break-all;
+}
+
+.c-contianer .show{
+    margin-top: 36rpx;
+    width: 270rpx;
+    height: 56rpx;
+    border: 2rpx solid #fc3b22;
+    border-radius: 10rpx;
+    color:#fc3b22;
+    background-color:#fff;
+    text-align: center;
+    line-height: 56rpx;
+    margin-left: auto;
+    margin-right:auto ;
+}
+
+.show{
+  padding-bottom:8rpx;
+}

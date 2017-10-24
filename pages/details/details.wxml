@@ -1,0 +1,135 @@
+
+<import src = '../../template/swiper/swiper.wxml'/>
+<import src = '../../template/priceAndnum/priceAndnum.wxml'/>
+<import src = '../../template/comment/comment.wxml'/>
+<import src = '../../template/details/details.wxml'/>
+<import src = '../../template/visa/visa.wxml'/>
+<import src = '../../template/buy/buy.wxml'/>
+
+<!--<view>
+    <text>fdskfj\r\nfsd,fm</text>
+</view>-->
+
+
+<view class = 'line-all'></view>
+<block wx:if = '{{data.error == 1}}'>
+        <view class = 'error'>
+            <image src = '../../images/20170711007_194x194.png'></image>
+            <view>数据加载失败</view>         
+        </view>
+</block>
+
+<block wx:elif = '{{data.error == 0}}'>
+    <block wx:if = '{{data.data == null }}'>
+        <view class = 'error'>
+            <image src = '../../images/20170711003_194x194.png'></image>
+            <view>数据为空</view>
+        </view>
+    </block>
+    
+    <block wx:else>
+        <!--轮播图-->
+        <!--<view  style = 'overflow-y:{{overflow}};height:{{height}}' >-->
+        <scroll-view  scroll-y  style = 'height:{{height}}' >
+            
+            <block wx:if = "{{banner != null}}">
+                <template is = 'swiper' data ='{{swiperConfig:swiperConfig,banner:banner}}'></template>
+            </block>
+        
+            <!--title-->
+            <block wx:if = '{{title != null}}'> 
+                <template is = 'priceAndnum' data = '{{...title}}'></template>
+            </block>
+        
+            <!--时间选择-->
+            <view class = 'dataPicker' bindtap = 'GoToPay'>
+                <view  class = 'd'>
+                    <image src = '../../images/commo_xq_data.png' class = 'icon'></image>
+                    <text class = 'dt'>出发时间</text>
+                </view>
+                
+                <view class = 't'>
+                        <block wx:if = '{{start_time !=null}}'>
+                            <text>{{start_time}}</text>
+                            <text>到</text>
+                            <text>{{end_time}}</text>
+                        </block>
+                        
+                    
+                    <text> > </text>
+                </view>
+            </view>
+        
+        
+            <!--描述-->
+            <block wx:if = '{{info != null}}'>
+                
+                <view class = 'info'>
+                   {{info}} 
+                </view>
+                
+            </block>
+        
+            <!--评论-->
+            <block wx:if = '{{comment != null}}'>
+                <template is = 'comment' data ='{{length:comment.length,goods_id:comment["goods_id"],goods_type:comment["goods_type"],...comment.firstList}}'></template>
+            </block>
+        
+            <!--行程-->
+            <block wx:if = '{{act != null}}'>
+                <view class = 'act-tab'>
+                
+                    <!--切换按钮-->
+                    <view class = 'act-tab-tab'>
+                        <view class='act-tab-l' data-tab ='act' bindtap = 'actChange'>
+                            <image src ='{{img.act}}' class='act-tab-img'></image>
+                            <text >活动详情</text>
+                        </view>
+                        <view class='act-tab-l' data-tab ='know' bindtap = 'actChange'>
+                            <image src ='{{img.konw}}' class='act-tab-img'></image>
+                            <text>预定须知</text>
+                        </view>
+                    </view>
+        
+                    <!--活动-->
+                    <view class = 'act-act' wx:if='{{act.act}}'>
+                        <view class='act-act-title'>
+                            <view class='act-act-title-t'>
+                                <span class='act-h-r'>——</span>
+                                <span>线路日程</span>
+                                <span class='act-h-l'>——</span>
+                            </view>
+                        </view>
+                        <view class='act-act-d'>
+                        <!--模板-->
+                            <block wx:for = '{{actData}}' wx:key = 'unique'>
+                                 <template is = 'act' data = '{{...item}}'></template>
+                            </block>
+                        </view>
+                        
+                    </view>
+                
+                    <!--预定须知-->
+                    <view class = 'act-konw' wx:if = '{{act.know}}'>
+                        <!--模板-->
+                      <template is = 'know' data = '{{startcity:know.startcity,endcity:know.endcity,godays:know.godays,feein:know.feein,feeno:know.feeno,tips:know.tips}}'></template>
+                      
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+        
+        <!--下单按钮-->
+       <template  is = 'foot' data = '{{shop_cart:shop_cart}}'></template>
+       
+       <!--弹窗-->
+       <template is = 'showModal'  data = '{{...modalInfo,start_time:start_time,end_time:end_time,animateStyle:animateStyle}}'></template>
+       <view class = 'cover' style = 'height:{{height}}' wx:if = '{{hasCover}}' bindtap = 'hideModal'>遮罩层</view>
+       
+    </block>
+</block>
+
+
+
+
+

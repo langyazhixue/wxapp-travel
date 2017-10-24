@@ -1,0 +1,63 @@
+
+@import '../../template/index_push/index_push.wxss'/>;
+
+page{
+    background-color: #fff;
+}
+
+
+.tab{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20rpx;
+    height: 80rpx;
+    margin-bottom: 20rpx;
+    min-height: 80rpx;
+}
+.tab view{
+    color:#282828;
+    font-size:26rpx;
+    padding-top:20rpx;
+    padding-left:20rpx;
+    padding-right:20rpx;
+    
+}
+
+
+
+.tab-1{
+    width:100%;
+    white-space: nowrap;
+    overflow: scroll;
+    height: 80rpx;
+    margin-bottom: 20rpx;
+    min-height: 80rpx;
+    padding-left:20rpx;
+    
+}
+
+.tab-1 .t{
+    display: inline-block;
+    color:#282828;
+    font-size:26rpx;
+    width:200rpx;
+    text-align: center;
+}
+
+.tab-1 .t view{
+    width:150rpx;
+    text-align: center;
+    padding-left:20rpx;
+    padding-right:20rpx;
+    padding-top:20rpx;
+    height: 80rpx;
+    min-height: 80rpx;
+    box-sizing: border-box;
+   
+}
+
+.tab-list{
+  color: #fc3b22 !important;
+  border-bottom: 4rpx solid #fc3b22 !important;
+  border-bottom: 4rpx solid #282828;
+}

@@ -1,0 +1,15 @@
+@import '../../template/index_push/index_push.wxss' ;
+
+@import '../../template/index_items/index_items.wxss';
+
+@import '../../template/swiper/swiper.wxss' ;
+
+page{
+  background-color:#f6f6f6;
+}
+
+.section-items{
+    padding-top:34rpx;
+    padding-bottom: 36rpx;
+    background-color:#fff ;
+}

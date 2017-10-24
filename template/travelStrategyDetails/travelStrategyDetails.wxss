@@ -1,0 +1,46 @@
+
+
+#title{
+  padding:48rpx 30rpx 26rpx 30rpx;
+  font-size:48rpx;
+  color:#ofofof;
+  line-height:65rpx
+}
+
+#time{
+  font-size:32rpx;
+  color:#999999;
+  padding-left:30rpx
+}
+
+#scan{
+  padding-left:64rpx
+}
+
+.list{
+  margin:0 38rpx;
+  line-height:50rpx
+}
+
+.small_title{
+  margin-top:90rpx;
+  color:#32ccd2;
+  font-size:34rpx;
+  text-align:center
+}
+
+.des{
+  margin-top:60rpx;
+  color:#686868;
+  font-size:28rpx
+}
+
+.img_box{
+  margin-top:30rpx;
+}
+
+.img{
+  width:100%;
+  margin-top:20rpx;
+  height: 360rpx;
+}

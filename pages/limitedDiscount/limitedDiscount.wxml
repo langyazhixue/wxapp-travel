@@ -1,0 +1,52 @@
+
+<import  src = '../../template/limitedDiscount/limitedDiscount.wxml'/>
+<view class = 'line-all'></view>
+<block wx:if = '{{data.error == 1}}'>
+    <view class = 'error'>
+        <image src = '../../images/20170711007_194x194.png'></image>
+        <view>数据加载失败</view>         
+    </view>
+</block>
+
+<block wx:elif = '{{data.error == 0}}'>
+    <block wx:if = '{{data.data == null }}'>
+        <view class = 'error'>
+            <image src = '../../images/20170711003_194x194.png'></image>
+            <view>数据为空</view>
+        </view>
+    </block>
+    
+    <block wx:else>
+        <!--swiper-->
+        <block wx:if = '{{data.data.banner != null}}'>
+            <view class = 'section-swiper'>
+                <swiper indicator-dots = "{{swiperConfig.indicatorDots}}" autoplay = "{{swiperConfig.autoplay}}" interval = "{{swiperConfig.interval}}" 
+                duration = "{{swiperConfig.duration}}" class = 'visa-img' indicator-color = "{{swiperConfig.indicatorColor}}" indicator-active-color = "{{swiperConfig.indicatorActiveColor}}" 
+                circular = "{{swiperConfig.circular}}">
+                <block wx:for = "{{data.data.banner}}">
+                    <block wx:if = '{{item.link != "" && item.link != null && item.extra != "" && item.extra != null}}'>
+                            <swiper-item data-link = "{{item.link+'?'+item.extra}}" bindtap = 'go'>
+                                <image src = "{{item.img}}" class = "visa-img-img slide-image" />
+                            </swiper-item>
+                    </block>
+                    <block wx:else>
+                        <swiper-item data-link = "{{item.link+'?'+item.extra}}">
+                            <image src = "{{item.img}}" class = "visa-img-img slide-image" />
+                        </swiper-item>
+                    </block>
+                    
+                  </block>
+                </swiper>
+            </view>
+        </block>
+
+        <!--timePush-->
+        <block wx:if = '{{data.data.timePush != null}}'>
+            <block wx:for = '{{data.data.timePush}}'>
+                <template is = 'timePush' data = '{{...item}}'></template>
+            </block>
+        </block>
+    </block>
+</block>
+
+

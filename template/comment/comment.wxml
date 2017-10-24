@@ -1,0 +1,20 @@
+
+<template name = 'comment'>
+    <view class="c-contianer" >
+        <view class="num" >宝贝评价({{length}})</view>
+        <view class="c-box">
+            <view class = 't'>
+            <image  src = "../../images/commo_xq_head.png"  class = 'icon'></image>
+                <text class = 'username'>{{user_name}}</text>
+            </view>
+            <view class = 'content'>
+                {{comment}}
+            </view>
+        </view>
+        <view class = 'show' data-link = "{{'../comment/comment?type='+goods_type+'&it='+goods_id}}" bindtap = 'go'>
+             <text style="color:#fc3b22;font-size:24rpx">查看全部评论</text>
+        </view>
+    </view>
+</template>
+
+

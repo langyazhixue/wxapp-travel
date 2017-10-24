@@ -1,0 +1,80 @@
+
+
+
+/*category style*/
+
+.ii-travel-icon{
+    width:100%;
+    padding:0 20rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+}
+
+.ii-trvel-icon-item-1{
+    width:104rpx;
+    line-height: 1.5;
+    display: block;
+   
+}
+
+.ii-items{
+    white-space: nowrap;
+    
+    background-color: #fff;
+    
+    overflow: scroll;
+    
+    
+}
+
+.ii-trvel-icon-item{
+    width:104rpx;
+    display: inline-block;
+    line-height: 1.5;
+    padding: 0 32.5rpx
+}
+
+.ii-b-c{
+    background-color: #fff;
+}
+
+.ii-tiim{
+    width:104rpx;
+    height: 104rpx;
+    display: block;
+    
+}
+
+.ii-trvel-icon-item text,.ii-trvel-icon-item-1 text{
+    width:100%;
+    display: block;
+    padding: 10rpx 0;
+    text-align: center;
+    font-size: 24rpx;
+    color:#282828;
+}
+
+.ii-items-1{
+    display: flex;
+    justify-content:center;
+}
+
+.trvel-icon-item-1{
+    width:104rpx;
+    display: block;
+    line-height: 1.5;
+    padding: 0 32.5rpx;
+}
+.trvel-icon-item-1 text{
+    width:100%;
+    display: block;
+    padding: 10rpx 0;
+    text-align: center;
+    font-size: 24rpx;
+    color:#282828;
+}
+
+
+

@@ -1,0 +1,59 @@
+
+#box{
+  width: 100%;
+  height: 220rpx;
+  border: dashed 0.1rpx #999999;
+  border-style:dashed none none none;
+  display: flex;
+  margin-bottom:16rpx;
+  padding-top:22rpx
+}
+
+#img_box{
+  float:left
+}
+
+#img{
+  width: 220rpx; 
+  height: 220rpx;
+}
+
+#content_box{
+  width:100%
+}
+
+#title{
+  font-size: 30rpx;
+  margin:0rpx 20rpx
+}
+
+#price_box{
+  color:#999999;
+  font-size:26rpx;
+  margin-left:24rpx;
+  margin-top:24rpx
+}
+
+#price{
+  text-decoration:line-through
+}
+
+
+#discount_box{
+  margin-top:15rpx;
+  margin-left:18rpx;
+  width:100%;
+}
+
+#discount{
+  color:#fc3b22;
+  font-size:35rpx;
+  float:left
+}
+
+#fake_sale{
+  color:#999999;
+  font-size:26rpx;
+  float:right;
+  margin-right:44rpx
+}

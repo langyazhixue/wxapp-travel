@@ -1,0 +1,92 @@
+@charset 'utf-8';
+/*
+ * travel  v1.0.0  
+ * copyRight 2017-05-23
+ * */
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border-style: solid;
+  white-space: nowrap;
+  padding: 19rpx 51rpx;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  border-width: 2rpx;
+  border-radius: 24rpx;
+}
+.btn-default {
+  color: #fc3b22;
+  background-color: #fff;
+  border-color: #fff;
+}
+page {
+  background-color: #fff;
+}
+.list {
+  border-bottom: 1rpx solid #e1e1e1;
+  padding-top: 30rpx;
+  padding-bottom: 40rpx;
+}
+.list .title {
+  height: 72rpx;
+  padding: 0 20rpx;
+  vertical-align: top;
+  position: relative;
+}
+.list .title .icon {
+  width: 72rpx;
+  height: 72rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.list .title .username {
+  color: #686868;
+  font-size: 24rpx;
+  display: inline-block;
+  margin-right: 35rpx;
+}
+.list .title .star {
+  vertical-align: top;
+  display: inline-block;
+  margin-right: 35rpx;
+}
+.list .title .star .star-img {
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 5rpx;
+}
+.list .title .time {
+  vertical-align: top;
+  color: #999999;
+  font-size: 24rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+}
+.list .comment {
+  color: #282828;
+  font-size: 26rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  padding-left: 112rpx;
+  padding-right: 20rpx;
+  display: inline-block;
+}
+.list .u-img {
+  padding-left: 112rpx;
+  margin-top: 30rpx;
+}
+.list .u-img {
+  padding-left: 112rpx;
+}
+.list .u-img image {
+  width: 190rpx;
+  height: 190rpx;
+  margin-right: 20rpx;
+}

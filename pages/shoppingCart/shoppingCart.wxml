@@ -1,0 +1,90 @@
+
+<import src = '../../template/shoppingCart/shoppingCart.wxml' />
+
+<view class = 'line-all'></view>
+<block wx:if = '{{data.error == 1}}'>
+    <view class = 'error'>
+        <image src = '../../images/20170711007_194x194.png'></image>
+        <view>数据加载失败</view>         
+    </view>
+</block>
+
+<block wx:elif = '{{data.error == 0}}'>
+    <block wx:if = '{{data.data == null  }}'>
+        <view class = 'error'>
+            <image src = '../../images/20170711003_194x194.png'></image>
+            <view>购物车为空，快去下单哦</view>
+        </view>
+    </block>
+    
+    <block wx:else>
+        <view class = 'main'>
+            <view class ='box'>
+                <view class = 's-top-container' >
+                    <view class = 's-top'>
+                       <view class = 's-btn-a' bindtap ='selectAll'>
+                            <view class = 's-btn-nochecked' wx:if ='{{!selectAllStatus}}'></view>
+                            <view class = 's-btn-checked' wx:if ='{{selectAllStatus}}'>
+                                <image src = '../../images/cart_pick.png' class = 'icon' ></image>
+                            </view>
+                        </view>
+                        
+                        <view class = 's-88icon'>
+                            <image src = '../../images/201707070010_44x44.png' class = 's-88-img'> </image>
+                        </view>
+                        <view class = 's-title'>
+                           88爱旅行 
+                        </view>
+                        <view class = 's-editor' bindtap = 'hasEditor'>
+                            <text wx:if ='{{!hasEditor}}'>编辑</text>
+                            <text  wx:if ='{{hasEditor}}'>完成</text>                                   
+                        </view>
+                    </view>
+                    <!--<view class = 'gx'></view>-->
+                </view>
+                
+                
+                <view class = 'u'></view>
+                
+                <view class = 's-item-container ' id = '{{itemContainer}}' style='overflow:hidden;'>
+                    <block wx:if = '{{!hasEditor}}'>
+                        <block wx:for = '{{carts}}'>
+                            <block wx:if = '{{item.type == 1 }}'>
+                                <template is = 'product' data ='{{index: index, ...item, hasEditor: hasEditor}}'></template>
+                            </block>
+                            <block wx:if = '{{item.type == 2 }}'>
+                                <template is = 'visa' data ='{{index: index, ...item, hasEditor: hasEditor}}'></template>
+                            </block>
+                        </block>
+                    </block>
+                    
+                    <block wx:if = '{{hasEditor}}'>
+                        <block wx:for = '{{carts}}'>
+                            <block wx:if = '{{item.type == 1 }}'>
+                                <template is = 'productEditor' data ='{{index: index, ...item, hasEditor: hasEditor}}'></template>
+                            </block>
+                            <block wx:if = '{{item.type == 2 }}'>
+                                <template is = 'visaEditor' data ='{{index: index, ...item, hasEditor: hasEditor}}'></template>
+                            </block>
+                        </block>
+                    </block>
+                    
+                </view>
+                
+                <view class = 'cart-footer'>
+                    <template is = 'shoppingCarPay' data = '{{totalPrice: totalPrice,selectAllStatus: selectAllStatus,hasEditor:hasEditor}}'></template>
+                </view>
+            </view>
+        </view>
+        
+        <!--模态框-->
+        <modal  confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" bindconfirm="modalConfirmChange" bindcancel="modalCancelChange">
+                        确定要删除这个商品吗
+        </modal>
+    </block>
+</block>
+
+
+
+
+

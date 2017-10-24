@@ -1,0 +1,5 @@
+@import  '../../template/visa/visa.wxss';
+
+page{
+    background-color: #fff !important;
+}

@@ -1,0 +1,43 @@
+
+#line{
+  border-top:solid 1rpx #D3D3D3;
+  height:1rpx;
+  background-color:#ffffff;
+  margin:0 40rpx;
+}
+
+#discount{
+  color:#fc3b22;
+  font-size:35rpx;
+  margin-left: 20rpx;
+}
+
+#price{
+    color:#999999;
+  font-size:26rpx;
+  margin-left:22rpx;
+  text-decoration:line-through
+}
+
+#body{
+  height:1rpx;
+  border-bottom:solid 1rpx #DCDCDC
+}
+
+.list{
+  background-color:#ffffff;
+  display:flex
+}
+
+.img{
+  width:240rpx;
+  height:240rpx;
+  margin:40rpx
+}
+
+.title{
+  margin:60rpx 40rpx 40rpx 20rpx;
+  line-height:60rpx;
+  font-size: 32rpx;
+}
+

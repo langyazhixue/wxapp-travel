@@ -1,0 +1,34 @@
+@import '../../template/allGoods/allGoods.wxss';
+page{
+    background:#fff;
+}
+
+#tab{
+    height: 88rpx;
+    box-sizing: border-box;
+    padding:0 50rpx;
+    display: flex;
+    justify-content: space-between;
+    padding-top:25rpx
+}
+
+#tab view{
+    width:160rpx; 
+    font-size: 30rpx;
+    color:#999;
+   
+}
+
+.t-img{
+    width:9rpx;
+    height: 30rpx;
+    position: relative;
+    top:4rpx
+}
+
+.checked{
+    color:red !important;
+}
+.t{
+    margin-right: 10rpx;
+}

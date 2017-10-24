@@ -1,0 +1,200 @@
+@charset 'utf-8';
+/*
+ * travel  v1.0.0  
+ * copyRight 2017-05-23
+ * */
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border-style: solid;
+  white-space: nowrap;
+  padding: 19rpx 51rpx;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  border-width: 2rpx;
+  border-radius: 24rpx;
+}
+.btn-default {
+  color: #fc3b22;
+  background-color: #fff;
+  border-color: #fff;
+}
+page {
+  background-color: #f6f6f6;
+}
+.order-main {
+  background-color: #fff;
+}
+.order-main .top {
+  padding-left: 20rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 24rpx;
+  color: #686868;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.order-main .main {
+  padding-left: 20rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 181rpx;
+  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1rpx solid #e1e1e1;
+  padding-bottom: 20rpx;
+}
+.order-main .main .main-icon {
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+}
+.order-main .main .main-main {
+  width: 500rpx;
+  color: #282828;
+  font-size: 28rpx;
+}
+.order-main .main .main-main .time-area {
+  color: #686868;
+  font-size: 24rpx;
+  margin-top: 16rpx;
+  margin-bottom: 16rpx;
+}
+.order-main .main .main-main .p-n {
+  display: flex;
+  justify-content: space-between;
+}
+.order-main .upload {
+  cursor: pointer;
+  padding-left: 20rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1rpx solid #e1e1e1;
+  font-size: 28rpx;
+  width: 100%;
+  height: 140rpx;
+}
+.order-main .upload .upload-u .icon {
+  display: inline-block;
+  margin-top: 40rpx;
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: top;
+  margin-right: 24rpx;
+}
+.order-main .upload .upload-u .upload-u-t {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 20rpx;
+}
+.order-main .upload .upload-u .upload-u-t .t {
+  color: #23ccd2;
+  padding-bottom: 8rpx;
+  margin-bottom: 14rpx;
+  border-bottom: 1rpx solid #23ccd2;
+  width: 194rpx;
+  text-align: center;
+}
+.order-main .upload .upload-u .upload-u-t .w {
+  color: #686868;
+  font-size: 24rpx;
+}
+.order-main .upload .upload-d {
+  cursor: pointer;
+}
+.order-main .upload .upload-d .icon {
+  display: inline-block;
+  margin-top: 40rpx;
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: top;
+  margin-right: 24rpx;
+}
+.order-main .upload .upload-d .t {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 44rpx;
+  color: #fc3b22;
+  padding-bottom: 8rpx;
+  border-bottom: 1rpx solid #fc3b22;
+  width: 194rpx;
+  text-align: center;
+}
+.order-main .more {
+  padding-left: 20rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1rpx solid #e1e1e1;
+  width: 100%;
+  height: 80rpx;
+}
+.order-main .more .icon {
+  width: 58rpx;
+  height: 80rpx;
+  display: block;
+}
+.order-main .more .count {
+  color: #282828;
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.order-main .more .count .num {
+  margin-right: 40rpx;
+}
+.order-main .foot {
+  padding-left: 20rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+}
+.order-main .foot .status {
+  color: #fc3b22;
+  font-size: 28rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.order-main .foot .b {
+  margin-top: 23rpx;
+}
+.order-main .foot .b button {
+  width: 150rpx;
+  text-align: center;
+  height: 54rpx;
+  line-height: 54rpx;
+  display: inline-block;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  box-sizing: border-box;
+}
+.order-main .foot .b .default {
+  color: #686868;
+  border: 1rpx solid #686868;
+}
+.order-main .foot .b .r {
+  color: #fc3b22;
+  border: 1rpx solid #fc3b22;
+}
+.order-main .l {
+  width: 100%;
+  height: 20rpx;
+  background-color: #f6f6f6;
+}

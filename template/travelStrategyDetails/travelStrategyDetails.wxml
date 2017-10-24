@@ -1,0 +1,17 @@
+
+<template name = 'tsd-list'>
+    <view class="list"  data-index = '{{index}}'>
+        <view wx:if="{{sub_title != null}}" class="small_title"> 
+            <text>{{sub_title}}</text>
+        </view>
+        <view  class="des"> 
+            <text>{{des}}</text>
+        </view>
+        <view  class="img_box"> 
+            <view wx:for="{{img}}" > 
+                <image src="{{item}}" class="img"></image>
+            </view>
+        </view>
+    </view>
+    
+</template>

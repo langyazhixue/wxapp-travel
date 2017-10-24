@@ -1,0 +1,88 @@
+
+
+/*商品标题和价格*/
+.visa-parameter{
+    height: 175rpx;
+    display: flex;
+    box-sizing: border-box;
+    margin-left:20rpx;
+    padding-right: 20rpx;
+    padding-top:44rpx;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #e1e1e1;
+}
+
+
+.visa-parameter .pn-title{
+    color:#282828;
+    font-size: 38rpx;
+    line-height: 58rpx;
+    font-weight: 700;
+    font-family: "黑体";
+    width:370rpx;
+}
+
+
+
+.visa-parameter .price .old{
+  font-size:28rpx;
+  color:#999999;
+  float:right;
+  clear:both;
+}
+
+.visa-parameter .price #old_text{
+  text-decoration: line-through
+}
+
+.visa-parameter .price .discount{
+  margin-top:5rpx;
+  color:#fc3b22;
+  font-size: 48rpx;
+  float:right;
+  clear:both;
+}
+
+
+/*商品标题和价格*/
+.visa-parameter{
+    height: 155rpx;
+    display: flex;
+    box-sizing: border-box;
+    margin-left:20rpx;
+    padding-right: 20rpx;
+    padding-top:24rpx;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #e1e1e1;
+}
+
+
+.visa-parameter-1 .pn-title{
+    color:#282828;
+    font-size: 38rpx;
+    line-height: 58rpx;
+    font-weight: 700;
+    font-family: "黑体";
+    width:370rpx;
+}
+
+
+
+.visa-parameter-1 .price .old{
+  font-size:28rpx;
+  color:#999999;
+  float:right;
+  clear:both;
+}
+
+.visa-parameter-1 .price #old_text{
+  text-decoration: line-through
+}
+
+.visa-parameter-1 .price .discount{
+  margin-top:5rpx;
+  color:#fc3b22;
+  font-size: 48rpx;
+  float:right;
+  clear:both;
+}

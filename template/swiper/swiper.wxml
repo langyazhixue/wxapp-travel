@@ -1,0 +1,35 @@
+  
+<!--swiper-->
+
+<template name = 'swiper'>
+    <view class = 'section-swiper'>
+        <swiper indicator-dots = "{{swiperConfig.indicatorDots}}" autoplay = "{{swiperConfig.autoplay}}" interval = "{{swiperConfig.interval}}" 
+        duration = "{{swiperConfig.duration}}" class = 'visa-img' indicator-color = "{{swiperConfig.indicatorColor}}" indicator-active-color = "{{swiperConfig.indicatorActiveColor}}" 
+        circular = "{{swiperConfig.circular}}">
+        
+          <block wx:for = "{{banner}}">
+            <swiper-item >
+              <image src = "{{item}}" class = "visa-img-img slide-image" />
+            </swiper-item>
+          </block>
+          
+        </swiper>
+    </view>
+</template>
+
+
+<template name = 'swiperDetails'>
+    <view class = 'section-swiper'>
+        <swiper indicator-dots = "{{swiperConfig.indicatorDots}}" autoplay = "{{swiperConfig.autoplay}}" interval = "{{swiperConfig.interval}}" 
+        duration = "{{swiperConfig.duration}}" class = 'visa-img' indicator-color = "{{swiperConfig.indicatorColor}}" indicator-active-color = "{{swiperConfig.indicatorActiveColor}}" 
+        circular = "{{swiperConfig.circular}}">
+        
+          <block wx:for = "{{banner}}">
+            <swiper-item data-link = "{{item.link+item.id}}" bindtap = 'GoToNewPage'>
+              <image src = "{{item.img}}" class = "visa-img-img slide-image" />
+            </swiper-item>
+          </block>
+          
+        </swiper>
+    </view>
+</template>

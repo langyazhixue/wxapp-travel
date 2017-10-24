@@ -1,0 +1,76 @@
+@charset 'utf-8';
+/*
+ * travel  v1.0.0  
+ * copyRight 2017-05-23
+ * */
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border-style: solid;
+  white-space: nowrap;
+  padding: 19rpx 51rpx;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  border-width: 2rpx;
+  border-radius: 24rpx;
+}
+.btn-default {
+  color: #fc3b22;
+  background-color: #fff;
+  border-color: #fff;
+}
+page {
+  color: #fff;
+}
+.strategy-main {
+  padding: 0 30rpx;
+  height: 264rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #e1e1e1;
+}
+.strategy-main .main {
+  width: 465rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.strategy-main .main .top {
+  height: 52rpx;
+}
+.strategy-main .main .top .icon-i {
+  width: 46rpx;
+  height: 52rpx;
+  margin-right: 12rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.strategy-main .main .top .t {
+  font-size: 24rpx;
+  color: #686868;
+  height: 52rpx;
+  line-height: 52rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.strategy-main .main .title {
+  color: #282828;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+.strategy-main .main .bottom {
+  font-size: 22rpx;
+  color: #999999;
+}
+.strategy-main .icon {
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  padding-top: 54rpx;
+}

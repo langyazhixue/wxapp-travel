@@ -1,0 +1,166 @@
+    
+<!--details-->
+
+<template name='act'>
+    <!--template-->
+    <view class='act-act-detail'>
+        <view class = 'act-act-con'>
+            <view class='act-act-d-t'>
+                <image src='../../images/20170630006_24x24.png' ></image>
+            </view>
+            <view class='act-act-d-cont'>
+                <view class='act-adc-t'>
+                                  第{{this_day}}天 
+                    <block wx:if = '{{route_start_city !=null && route_start_city !=""}}'>
+                        {{route_start_city}}-{{route_end_city}}
+                    </block>
+                </view>
+                <view class='act-adc-c'>{{content}}</view>
+            </view>
+        </view>
+        
+        <view class='act-act-d-pic'>
+            <block wx:for = '{{url}}'>
+                <image src='{{item}}' ></image>
+            </block>
+        </view>
+    </view>
+            
+</template>
+
+<template name = 'know'>
+    <view class = 'act-konw-ex'>
+        <view class='act-konw-d-title'>
+            <span class = 'act-konw-d-t'></span>
+            <span class = 'act-konw-d-d'>产品说明</span>
+        </view>
+        <view class = 'act-konw-d-c'>
+            <view class ='act-konw-d-c-1'>
+                <span class ='span1'>出发地</span>
+                <span class = 'span2'>{{startcity}}</span>
+            </view>
+            <view class ='act-konw-d-c-1'>
+                <span class ='span1'>目的地</span>
+                <span class = 'span2'>{{endcity}}</span>
+            </view>
+            <view class ='act-konw-d-c-1'>
+                <span class ='span1'>行程天数</span>
+                <span class = 'span2'>{{godays}}</span>
+            </view>
+        </view>
+    </view>
+    <view class = 'act-konw-include'>
+        <view class='act-konw-d-title'>
+            <span class = 'act-konw-d-t'></span>
+            <span class = 'act-konw-d-d'>费用包含</span>
+        </view>
+        <view class = 'act-konw-d-c'>
+            <text>{{feein}}</text>
+        </view>
+    </view>
+     <view class = 'act-konw-not-include'>
+        <view class='act-konw-d-title'>
+            <span class = 'act-konw-d-t'></span>
+            <span class = 'act-konw-d-d'>费用不包含</span>
+        </view>
+        <view class = 'act-konw-d-c'>
+        <text>{{feeno}}</text>
+        </view>
+        
+    </view>
+    
+    <view class = 'act-konw-especially' >
+        <view class='act-konw-d-title'>
+            <span class = 'act-konw-d-t'></span>
+            <span class = 'act-konw-d-d'>特别提醒</span>
+        </view>
+        <view class = 'act-konw-d-c'>
+        <text>{{tips}}</text>
+        </view>
+    </view>
+</template>
+
+<template name = 'showModal'>
+    <view class = 'modal {{animateStyle}}'>
+        <view class = 'hide' bindtap = 'hideModal'>
+            <image src = '../../images/commo_xq_close.png'></image>
+        </view>
+        
+        <!--头部-->
+        
+        <view class = 'top'>
+            <image class='icon' src = '{{title_img}}'></image>
+            <view class = 'r'>
+                <view class = 'tt'>{{title}}</view>
+                <!--初始状态-->
+                <block  wx:if = '{{hasStartTime == false}}'>
+                    <block wx:if = '{{discount == null}}'>
+                        <view class = 'discount'>{{price}}</view>
+                    </block>
+                    <block wx:else>
+                        <view class = 'price'>原价{{price}}</view>
+                        <view class = 'discount'>￥{{discount}}</view>
+                    </block>
+                </block>
+                <block wx:else >
+                    <view class = 'discount'>￥{{choosedPrice}}</view>
+                </block>
+                
+                
+            </view>
+        </view>
+        
+        <!--时间选择-->
+        <view class = 'dataPicker'>
+            <view  class = 'd'>
+                <image src = '../../images/commo_xq_data.png' class = 'icon'></image>
+                <text class = 'dt'>出发时间</text>
+            </view>
+            <view class = 't' bindtap = 'g'>
+                <block wx:if = '{{start_time !=null && hasStartTime == false}}'>
+                    <text>{{start_time}}</text>
+                    <text>到</text>
+                    <text>{{end_time}}</text>
+                </block>
+                
+                <block wx:if = '{{hasStartTime == true}}'>
+                   <text>{{choosedDate}}</text> 
+                </block>
+                
+                <text> > </text>
+            </view>
+        </view>
+        <!--加减数量-->
+        <view class = 'num'>
+            <span  class='text'>购买数量:</span>
+            <!--右边增加或者减少数量-->
+            <view class = 's-i-compute'>
+                
+                <!--<view class = 's-i-c-cut' data-index = '{{index}}' bindtap = 'minusCount' wx:if= '{{num<2}}' >
+                  -
+                </view>
+                <view class = 's-i-c-cut-d'  bindtap = 'minusCount' wx:if= '{{num>=2}}'>
+                  -
+                </view>
+                <view class = 's-i-c-num'>
+                    {{num}}
+                </view>
+                <view class = 's-i-c-add'  bindtap = 'addCount'>
+                    + 
+                </view>-->
+                <view class=" s-i-compute">
+                    <image src="../../images/20170703001_46x46.png" class='pn-num-img prve' bindtap='minusCount'></image>
+                    <span class='pn-num-num'>{{num}}</span>
+                    <image src="../../images/20170703002_46x46.png" class='pn-num-img next' bindtap='addCount'></image>
+                </view>
+            
+            </view> 
+            
+        </view>
+        <!--按钮-->
+        <view class = 'join' wx:if = '{{buttonType == 2}}' data-buttontype = '{{buttonType}}' bindtap = 'goTo'>立即购买</view>
+        <view class = 'join' wx:if = '{{buttonType == 1}}' data-buttontype = '{{buttonType}}' bindtap = 'goTo'>加入购物车</view>
+    </view>
+</template>
+
+

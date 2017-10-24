@@ -1,0 +1,19 @@
+
+<template name = 'strategy'>
+    <view class = 'strategy-main' data-link = '{{"../travelStrategyDetails/travelStrategyDetails?id="+id+"&title="+title+"&ts="+ts+"&scan="+scan+"&des="+des}}' bindtap = 'go'>
+        <view class = 'main'>
+            <view class = 'top'>
+               <image src = '../../images/20170711006_46x52.png' class = 'icon-i'></image>
+               <text class = 't'>{{ts}}</text>
+            </view>
+            <view class = 'title'>
+                {{title}}
+            </view>
+            <view class = 'bottom'>
+                                        阅读:{{scan}}
+            </view>
+        </view>
+        <image src = '{{img}}' class = 'icon'>
+        </image>
+    </view>
+</template>

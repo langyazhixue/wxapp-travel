@@ -1,0 +1,92 @@
+    <import src = '../../template/mine/mine.wxml'/>
+
+
+<view class = 'line-all'></view>
+	<view class='userInfo' >
+		
+ 		<block wx:if = "{{userWxInfo}}">
+		    <image  class='userinfo-avatar'src='{{userWxInfo.avatarUrl}}' background-size="cover"  bindtap = 'checkLogin' ></image>
+ 		    <view class='userinfo-nickname'>{{userWxInfo.nickName}}</view>
+ 		    
+        </block>
+        
+		<block wx:else>
+			<view class='login' bindtap = 'login'>登录</view>
+		</block>
+ 		
+ 		<block wx:if = '{{!hasList}}'>
+ 		    <!--编辑按钮-->
+            <view class = 'editor'  bindtap = 'editor'>
+                <image  src = '../../images/20170711001_45x45.png' ></image>
+            </view>
+            
+ 		</block>
+		<!--tab change-->
+		<view  class='tabchange'>
+			<view class='my-order'  data-index = '1' bindtap='tab'>
+				<view>我的订单</view>
+				<span class='trigger pos' wx:if = '{{hasList}}'></span>
+			</view>
+			<view class='line'>|</view>
+			<view class='info' bindtap='tab' data-index = '2'>
+				<view>资料信息</view>
+				<span class='trigger pos' wx:if = '{{!hasList}}'></span>
+			</view>
+		</view>
+	</view>
+	
+	<!--订单详细信息-->
+	
+	
+	<view class = 'box' wx:if = '{{hasList}}'>
+	    <block wx:if = '{{data.error == 1}}'>
+            <view class = 'error' style = 'padding-top:150rpx'>
+                <image src = '../../images/20170711007_194x194.png'></image>
+                <view>数据加载失败</view>         
+            </view>
+        </block>
+        
+        <block wx:elif = '{{data.error == 0}}'>
+            <block wx:if = '{{data.data == null }}'>
+                <view class = 'error' style = 'padding-top:150rpx'>
+                    <image src = '../../images/20170711003_194x194.png'></image>
+                    <view>数据为空</view>
+                </view>
+            </block>
+            
+            <block wx:else>
+                <block wx:for = '{{data.data.showOrderList}}'>
+                    <template is = 'order' data = '{{...item,index:index}}'></template>
+                </block>
+            </block>
+        </block>
+	</view>
+	
+	
+	<view class='info-container'  wx:if = '{{!hasList}}'>
+		<view class='info-view info-view-border-b'>
+			<view>姓名</view>
+			<block wx:if = "{{userOtherInfo.name != 'undefined' && userOtherInfo.name != null}}">
+				<view class='fc'>{{userOtherInfo.name}}</view>	
+			</block>
+		</view>
+		<view class='info-view info-view-border-b'>
+			<view>电话</view>
+			<block wx:if = "{{userOtherInfo.tel !='undefined'&& userOtherInfo.tel != null}}">
+				<view class='fc'>{{userOtherInfo.tel}}</view>
+			</block>
+		</view>
+		
+		<view class='info-view info-view-border-b'>
+			<view>绑定账号</view>
+			<view class='fc'>微信</view>
+		</view>
+		<view class='info-add' bindtap ='call'>
+			<view>我的地址</view>
+			<block wx:if = "{{userOtherInfo.address !='undefined'&& userOtherInfo.address != null}}">
+                <view class='fa'>{{userOtherInfo.address}}</view>
+            </block>
+		</view>
+	</view>
+
+   

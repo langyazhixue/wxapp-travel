@@ -1,0 +1,32 @@
+
+
+.ad-visa-foot-address{
+    padding:40rpx 0 ;
+    position:relative; 
+    background-color:#ffffff
+
+}
+
+.ad-vfa-img{
+    width: 40rpx;
+    height:48rpx ;
+    position:absolute;
+    top:40rpx;
+    left:38rpx;
+}
+
+.ad-vfa{
+    color:#282828;
+    font-size: 24rpx;
+    margin:10rpx 0;
+}
+
+.ad-visa-img{
+    width: 100%;
+    height: 560rpx;
+}
+
+.ad-visa-img-img{
+    width: 100%;
+    height: 100%;
+}

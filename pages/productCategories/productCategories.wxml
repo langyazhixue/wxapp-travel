@@ -1,0 +1,62 @@
+
+<import src = '../../template/index_push/index_push.wxml'/>
+
+
+<!--<view id="header" >
+    <view class="tab {{click == index ? 'light' : 'wait'}}" wx:for="{{tab}}" id="{{index}}" wx:key="unique"  bindtap="tab">
+    {{item.title}}
+    </view>
+</view>-->
+
+<!--<view id="body">
+<view class="for" wx:for="{{data}}" wx:key="unique" wx:for-item="vo">
+  <image src ='http://192.168.8.47/shunba/php/travel/Application/uploads/{{vo.title_img}}' id="img" class="img"></image>
+  <view   class="title">{{vo.title}}</view>
+  <view class="bottom"> 
+  <view class="price">￥{{vo.price}}</view>
+  <view class="sale">2人付款</view>
+  </view>
+</view>
+</view>-->
+<view class = 'line-all'></view>
+<block wx:if = '{{data.error == 1}}'>
+        <view class = 'error'>
+            <image src = '../../images/20170711007_194x194.png'></image>
+            <view>数据加载失败</view>         
+        </view>
+</block>
+
+<block wx:if = '{{data.error == 0}}'>
+    <block wx:if = '{{data.data == null }}'>
+        <view class = 'error'>
+            <image src = '../../images/20170711003_194x194.png'></image>
+            <view>数据为空</view>
+        </view>
+    </block>
+    
+    <block wx:elif = '{{data.error == 0}}'>
+        <block wx:if = '{{data.data.titleList.length<=4}}'>
+            <view class = 'tab'>
+                <view class = '{{item.style}}' wx:for = '{{data.data.titleList}}' data-index = '{{index}}' bindtap = 'tab'>{{item.title}}</view>
+            </view>
+        </block>
+        
+        <block wx:else>
+             <view class = 'tab-1'>
+                  <view  class = 't' wx:for = '{{data.data.titleList}}' data-index = '{{index}}' bindtap = 'tab'>
+                      <view class = '{{item.style}}' >{{item.title}}</view>
+                  </view>
+             </view>
+        </block>
+        
+        <block wx:for = '{{data.data.data}}'  wx:key="unique">
+            <view class = 'push' data-index = '{{index}}' hidden = '{{!item.hasShow}}'>
+                <block wx:for = '{{item.goods}}' wx:for-item ='i'  wx:key="unique">
+                   <template is = 'productCategoriesList' data = '{{...i}}'></template>
+                </block>
+            </view>
+        </block>
+        
+    </block>
+    
+</block>

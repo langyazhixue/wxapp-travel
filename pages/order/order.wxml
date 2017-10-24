@@ -1,0 +1,120 @@
+
+<!--头部收货地址-->
+<view class = 'line-all'></view>
+<form bindsubmit="formSubmit">
+    <view id="header" style="" bindtap="add_address">
+        <block wx:if = "{{userOtherInfo != null}}">
+            <view   id="header1">
+            <image src="../../images/oder_address.png" id="header1_img" bindtap="getAddress"></image>
+                <view id="header1_div">
+                    <view class = 'header_title'>
+                        <view id="header1_div_name" >{{userOtherInfo.name}}</view>
+                        <view id="header1_div_tel" >{{userOtherInfo.tel}}</view>
+                    </view>
+                    <view id="header1_div_address" >{{userOtherInfo.address}}</view>
+                    <view class = 'editor' bindtap = 'chooseAddress'>修改</view>
+                </view>
+                
+            </view>
+        </block>
+        <block wx:else>
+            <view  id="header2" bindtap = 'chooseAddress'>
+                <image src="../../images/oder_add.png" id="header2_img"></image>
+                <view class="" id="header2_text">添加收货地址</view>
+            </view>
+        </block>
+    </view>
+    
+    <!--割线-->
+    <view class="blank" ></view>
+
+    <block  wx:for="{{payInfo}}" wx:key = 'unique' >
+        <block wx:if = "{{item.type == 1}}">
+            <view class="list" >
+                <view class='list_img' >
+                      <image src="{{item['title_img']}}" class="img"></image>
+                </view>
+                
+                <view class="list_right" >
+                    <view class='list_title' >
+                          {{item.title}}
+                    </view>
+                    
+                    <view class='list_start_day' >
+                            {{item.depart_time}}
+                    </view>
+                    
+                    <view class='price_div'>
+                        <text class="discount">￥{{item["goods_price"]}}</text>
+                        <!--<text class="price">￥{{item["goods_price"]}}</text>-->
+                        <text class='num'>X{{item["goods_num"]}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="blank" ></view>
+        </block>
+        
+        <block wx:elif = '{{item.type == 2}}' >
+            <view class="list" >
+                <view class='list_img' >
+                    <image src="{{item['title_img']}}" class="img"></image>
+                </view>
+                <view class="list_right" >
+                    <view class='list_title' >
+                        {{item["visa_title"]}}
+                    </view>
+                    
+                    <view class='list_start_day' >
+                        <block wx:if ='{{item["visa_type_name"] !=null }}'>
+                            {{item["visa_type_name"]}}
+                        </block>
+                        <block wx:if = '{{item["visa_combo_name"] != null}}'>
+                            :{{item["visa_combo_name"]}}
+                        </block>
+                         
+                    </view>
+                    <view class='price_div'>
+                        <text class="discount">￥{{item['visa_price']}}</text>
+                        <!--<text class="price">￥{{item['visa_price']}}</text>-->
+                        <text class='num'>X{{item['visa_num']}}</text>
+                    </view>
+                </view>
+            </view>
+        <view class="blank" ></view>
+        </block>
+    </block>
+    
+    <!--割线-->
+
+    <view class='order-info' >
+        <view id="leave_box" >
+            <input id="leave" value =  '留言' readonly />
+            <input id="leave_content" placeholder="给商家留言(45字以内)"  name = 'text' />
+        </view>
+    
+        <view id="pay_box" >
+            <text id="pay_type">支付方式</text>
+            <text id="pay">微信支付</text>
+            <image src="../../images/oder_payway.png" id="pay_img"></image>
+        </view>
+    
+        <view class="" id="total_box">
+            <text id="total_text">总价</text>
+            <view class="" id="totalPrice">￥ {{totalPrice}}</view>
+        </view>
+        
+        <!--割线-->
+        <view id="blank2" ></view>
+        
+        <view id="foot_box" >
+            <view id="foot_box_box" >
+                
+                <!--支付按钮-->
+                <button id="foot_box_box_text" formType="submit">支付订单</button>
+            </view>
+            <text id="foot_totalPrice">合计：￥{{totalPrice}}</text>
+        </view>
+        
+    </view>
+</form>
+

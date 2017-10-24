@@ -1,0 +1,6 @@
+@import '../../template/limitedDiscount/limitedDiscount.wxss';
+
+@import '../../template/swiper/swiper.wxss';
+page{
+    background-color: #fff !important;
+}

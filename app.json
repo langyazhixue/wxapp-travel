@@ -1,0 +1,64 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/mine/mine",
+        "pages/mineDetails/mineDetails",
+        "pages/details/details",
+        "pages/visa/visa",
+        "pages/visaDetails/visaDetails",
+        "pages/order/order",
+        "pages/allGoods/allGoods",
+        "pages/dataPicker/dataPicker",
+        "pages/limitedDiscount/limitedDiscount",
+        "pages/shoppingCart/shoppingCart",
+        "pages/travelStrategy/travelStrategy",
+        "pages/travelStrategyDetails/travelStrategyDetails",
+        "pages/productCategories/productCategories",
+        "pages/uploadComment/uploadComment",
+        "pages/comment/comment",
+        "pages/orderDetails/orderDetails",
+        "pages/uploadDetails/uploadDetails"
+        
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTitleText": "88爱旅行",
+        "navigationBarTextStyle": "black", 
+        "backgroundTextStyle": "dark",  
+        "enablePullDownRefresh": true
+    },
+	  "tabBar": {
+      	"color": "#686868",
+      	"selectedColor": "#282828",
+      	"borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [{
+            "pagePath": "pages/index/index",
+            "text": "首页",
+            "iconPath": "./images/20170707005_46x46.png",
+            "selectedIconPath": "./images/20170707006_46x46.png"
+        }, {
+            "pagePath": "pages/allGoods/allGoods",
+            "text": "全部商品",
+            "iconPath": "./images/20170707001_46x46.png",
+            "selectedIconPath": "./images/20170707002_46x46.png"
+        }, {
+            "pagePath": "pages/shoppingCart/shoppingCart",
+            "text": "购物车",
+            "iconPath": "./images/20170707003_46x46.png",
+            "selectedIconPath": "./images/20170707004_46x46.png"
+        }, {
+            "pagePath": "pages/mine/mine",
+            "text": "我的",
+            "iconPath": "./images/20170707007_46x46.png",
+            "selectedIconPath": "./images/20170707008_46x46.png"
+        }]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000,
+        "uploadFile": 10000,
+        "connectSocket": 10000
+    },
+    "debug": true
+}

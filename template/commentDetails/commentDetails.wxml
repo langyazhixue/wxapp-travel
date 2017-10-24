@@ -1,0 +1,29 @@
+<template name = 'commonetDetails'>
+    
+    <view class = 'list'>
+       <view class = 'title'>
+            <image src = '../../images/com_xq_head.png' class = 'icon'></image>
+            <text class = 'username'>{{user_name}}</text>
+            <view class = 'star'>
+                <block wx:for="{{stars}}">
+                    <image class = 'star-img'  src="{{key > item.star ?(item.keyItem == 0.5 ? halfSrc :selectedSrc ) :normalSrc}}" ></image>
+                </block>
+            </view>
+            
+           <text class = 'time'>{{ts}}</text>
+        </view> 
+       
+        <view class = 'comment'>
+              {{comment}}        
+        </view> 
+        
+        <view class = 'u-img' >
+            <block wx:for = '{{img}}'>
+                 <image src = '{{item}}' data-src = '{{item}}' bindtap = '_previewImage' data-imglist = '{{image}}'></image>
+            </block>
+        </view>
+        
+    </view>
+</template>
+
+

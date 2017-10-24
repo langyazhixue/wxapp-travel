@@ -1,0 +1,47 @@
+<view class = 'line-all'></view>
+<view class = 'title'>
+    <view class = 'icon'>
+        <image src = '../../images/20170707009_220x220.jpg'></image>
+    </view>
+    <view class = 'score'>
+        <view class = 'score-t'>评分</view>
+        
+        <!--评分-->
+        <block wx:for="{{stars}}">
+            <image class="star-image"  src="{{key > item.star ?(item.keyItem == 0.5 ? halfSrc : selectedSrc ) : normalSrc}}">
+            <view class="item" style="left:0" data-key="{{item.star + 0.5}}"  bindtap="selectLeft" ></view>
+            <view class="item" style="left:32rpx" data-key="{{item.star + 1}}" bindtap="selectRight" ></view>
+            </image>
+        </block>
+        
+    </view>
+</view>
+
+
+<form class = 'form'  bindsubmit="formSubmit">
+    <view  class = 'f'>
+        <textarea placeholder = '说说哪里满意，带大家一起旅行（200字以内）' maxlength = '200'  placeholder-class = 't-holder' class = 'holder'  name = 'textarea'>
+    
+        </textarea>
+        
+        <view class = 'add-i'>
+            <view class = 'add' bindtap = 'checkImg'>
+                <image src = '../../images/com_addpic.png'></image>
+            </view>
+                    
+            <view class = 'img-item' wx:if = '{{imgList != null && imgList.length !=0}}'  wx:for = "{{imgList}}">
+                <image  src = '{{item}}' class = 'img-img' data-src ='{{item}}'bindtap='preview' ></image>
+                <span class='delete' data-index ='{{index}}' bindtap = 'deleteImg'>x</span>
+            </view>
+                    
+        </view>
+    </view>
+    
+    
+            
+    <view class = 'submit'>
+        <button formType="submit">提交</button>
+   </view>
+    
+    
+</form>

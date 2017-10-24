@@ -1,0 +1,46 @@
+
+<!--签证价格和数量-->
+
+<template name ='priceAndnum'>
+    <view class='visa-parameter'>
+        <!--price-->
+         <view class='pn-title'>
+            <view>{{titleData}}</view>
+        </view>
+        
+         <!--title-->
+        <view class='price'>
+             <block wx:if = '{{discount == null}}'>
+                <view class='discount'>￥{{price}}</view>
+             </block>
+             <block wx:else>
+                <view class='old'>原价 <text id="old_text"> ￥{{price}}</text></view>
+                <view class='discount'>￥{{discount}}</view> 
+             </block>
+        </view>
+        
+    </view>
+</template>
+
+
+<template name ='priceAndnum-visa'>
+    <view class='visa-parameter'>
+        <!--price-->
+         <view class='pn-title'>
+            <view>{{titleData}}</view>
+        </view>
+        
+         <!--title-->
+        <view class='price'>
+             <block wx:if = '{{discount == null}}'>
+                <view class='discount'>￥{{price}}</view>
+             </block>
+             <block wx:else>
+                <view class='old'>原价 <text id="old_text"> ￥{{price}}</text></view>
+                <view class='discount'>￥{{discount}}</view> 
+             </block>
+        </view>
+        
+    </view>
+</template>
+

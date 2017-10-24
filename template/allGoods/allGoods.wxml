@@ -1,0 +1,33 @@
+<template name = 'ag-list'>
+    <block wx:if = '{{type == 1}}'>
+        <view  id="box" data-link = '{{"../details/details?id="+id}}' bindtap = 'go' >
+            <view id="img_box">
+                <image src ='{{img}}' id="img" ></image>
+            </view>
+            <view id="discount_box" style="">
+                <view id="title" >{{title}}</view>
+                <view id="price_box">原价 <text id="price"> ￥{{price}}</text></view>
+                <view id="discount_box">
+                    <view id="discount"  wx:if = "{{discount != null && discount!=''}}">￥ {{discount}}</view>
+                    <view  id="fake_sale">{{sale_count}}人付款</view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:elif = '{{type ==2}}'>
+         <view  id="box"  data-link = '{{"../visaDetails/visaDetails?id="+id}}' bindtap = 'go'>
+            <view id="img_box">
+                <image src ='{{img}}' id="img" ></image>
+            </view>
+            <view id="discount_box" style="">
+                <view id="title" >{{title}}</view>
+                <view id="price_box">原价 <text id="price"> ￥{{price}}</text></view>
+                <view id="discount_box">
+                    <view id="discount"  wx:if = "{{discount != null && discount!=''}}">￥ {{discount}}</view>
+                    <view  id="fake_sale">{{sale_count}}人付款</view>
+                </view>
+            </view>
+        </view> 
+    </block>
+    
+</template>

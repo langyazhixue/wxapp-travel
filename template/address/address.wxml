@@ -1,0 +1,20 @@
+
+
+
+<template name = 'address'>
+    <view class='ad-visa-foot'>
+        <view class="" style="padding:0 40rpx;background-color:#ffffff">
+        <image src="../../images/commo_xq_map.png" style="width:660rpx;height:154rpx"></image>
+        </view>
+        <view class="ad-visa-foot-address" style="text-align:center">
+            <view class="" style="width:100%;font-size:28rpx;color:#282828;margin-bottom:30rpx">—— 寄送地址 ——</view>
+            <!-- <image src='http://opnxrafks.bkt.clouddn.com/20170713001_750x458.jpg' class='ad-vfa-img'></image> -->
+            <view class='ad-vfa'>浙江顺巴文化传媒有限公司</view>
+            <view class='ad-vfa'>0571-81022392</view>
+            <view class='ad-vfa'>浙江省杭州市西湖区文一西路857号智慧产业创业园B座502室</view>
+        </view>
+    </view> 
+</template>
+
+ 
+

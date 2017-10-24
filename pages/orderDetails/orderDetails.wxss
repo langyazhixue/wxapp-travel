@@ -1,0 +1,442 @@
+
+.clear{
+  clear:both
+}
+
+#header{
+  width:100%;background-color:#ffffff
+}
+
+#header0{
+  border-top:solid 1rpx #D3D3D3;
+  height:168rpx
+}
+
+.header_text{
+  width:80rpx;
+  height:80rpx;
+  padding:44rpx
+}
+
+.header_span{
+  position:relative;
+  top:-70rpx;
+  font-size:30rpx;
+  color:#282828
+}
+
+.line{
+  border-top:solid 1rpx #e1e1e1;
+  height:1rpx;
+  background-color:#ffffff;
+  margin-left:20rpx
+}
+
+
+#header1{
+  height:186rpx
+}
+
+#header1_img{
+  width:80rpx;
+  height:80rpx;
+  position:relative;
+  top:14rpx;
+  left:30rpx
+}
+
+#header1_div{
+  float:right;
+  width:80%;
+  padding-top:22rpx;
+  margin-right:26rpx
+}
+
+#header1_div_name{
+  font-size:32rpx;
+  color:#282828;
+  display:inline-block;
+}
+
+#header1_div_tel{
+  margin-top:10rpx;
+  font-size:28rpx;
+  color:#282828;
+  float:right;
+}
+
+#header1_div_address{
+  font-size:26rpx;
+  color:#282828;
+  width:100%;
+  height:85rpx;
+  margin-top:15rpx;
+  line-height:150%
+}
+
+#header2{
+  height:106rpx;
+}
+
+#header2_img{
+  width:80rpx;
+  height:80rpx;
+  position:relative;
+  top:16rpx
+}
+
+#header2_text{
+  display:inline-block;
+  position:relative;
+  top:-12rpx;
+  font-size:32rpx;
+  color:#282828
+}
+
+
+#body_small_box{
+  height:88rpx;
+  background-color:#fff;
+}
+
+#order_shop{
+  width:44rpx;
+  height:44rpx;
+  margin:22rpx 0rpx 18rpx 20rpx
+}
+
+#body_small_text{
+  float:right;
+  margin:25rpx 0rpx;
+  width:88%;
+  font-size:28rpx
+}
+
+#app_name{
+  color:#434343
+}
+
+#body_small_text_status{
+  float:right;
+  margin-right:20rpx;
+  color:#fc3b22;
+}
+
+
+.blank{
+  height:20rpx;
+  width:100%;
+  background-color:#f6f6f6
+}
+
+.list{
+  height:258rpx;
+  display:flex;
+  background-color:#ffffff;
+  padding-bottom:30rpx;
+  margin-left:20rpx;
+  border-bottom: 1rpx solid #e1e1e1;
+}
+
+.list_img{
+  float:left;
+  margin-top:34rpx;
+ 
+}
+
+.img{
+  width:220rpx;
+  height:220rpx
+}
+
+
+.list_right{
+  width:100%;
+  margin-left:26rpx;
+}
+
+.list_title{
+  margin-top:38rpx;
+  font-size:32rpx;
+  margin-right:20rpx
+}
+
+.list_start_day{
+  font-size:26rpx;
+  color:#999999;
+  margin-top:24rpx
+}
+
+.no_start_day{
+  font-size:26rpx;
+  color:#999999;
+  margin-top:24rpx;
+  margin-bottom:73rpx
+}
+
+.total_span{
+  float:right;
+  margin:25rpx 0rpx;
+  width:100%;
+  font-size:28rpx
+}
+
+.total_sum{
+  float:right;
+  margin-right:20rpx;
+}
+
+.color43{
+  color:#434343
+}
+
+.price_div{
+  margin-top:22rpx;
+}
+
+.discount{
+  font-size:30rpx;
+  color:#282828
+}
+
+.price{
+  text-decoration:line-through;
+  font-size:26rpx;
+  color:#999999;
+  margin-left:23rpx
+}
+
+.num{
+  font-size:26rpx;
+  color:#999999;
+  float:right;
+  margin-right:26rpx
+}
+
+.order-info{
+  background-color:#ffffff
+}
+
+#leave_box{
+  padding-left:22rpx;
+  display: flex;
+  padding-bottom: 30rpx;
+}
+
+#leave{
+  font-size:28rpx;
+  color:#282828;
+ 
+  margin-top:30rpx;
+}
+
+.total_box{
+  padding-left:22rpx;
+  height:90rpx;
+}
+
+#leave_content{
+ 
+  font-size:28rpx;
+  color:#999999;
+  margin-left:20rpx;
+  width:75%;
+  margin-top:30rpx;
+  margin-right:20rpx
+}
+
+#order_box{
+  padding-left:22rpx;
+  height:118rpx;
+  border-bottom:solid 1rpx #D3D3D3;
+}
+
+#total_box_center{
+  text-align:center
+}
+
+#service{
+  color:#3283fa;
+  font-size:28rpx;
+  position:relative;
+  top:-23rpx
+}
+#total_box_img{
+  width:70rpx;
+  height:70rpx;
+  margin-top:10rpx
+}
+
+#order_time_box{
+  float:right;
+  width:100%;
+}
+.order_font{
+  font-size:24rpx;
+  color:#999999
+}
+#order_num_box{
+  float:right;
+  width:100%;
+  margin-top:10rpx;
+}
+
+#pay_box{
+  padding-left:22rpx;
+  height:88rpx;
+}
+
+#pay_type{
+  font-size:28rpx;
+  color:#282828;
+  position:relative;
+  top:10rpx
+}
+
+#pay{
+  font-size:28rpx;
+  color:#282828;
+  float:right;
+  margin-right:30rpx;
+  margin-top:20rpx
+}
+
+#pay_img{
+  width:50rpx;
+  height:50rpx;
+  float:right;
+  margin-right:18rpx;
+  margin-top:16rpx
+}
+
+.total_box{
+  padding-left:22rpx;
+  height:90rpx;
+}
+
+#order_box{
+  padding-left:22rpx;
+  height:130rpx;
+}
+
+#total_text{
+  font-size:28rpx;
+  color:#282828;
+  position:relative;
+  top:12rpx
+}
+
+#totalPrice{
+  float:right;
+  margin-right:30rpx;
+  margin-top:25rpx;
+  font-size:30rpx;
+  color:#fc3b22
+}
+
+#blank2{
+  height:118rpx;
+  width:100%;
+  background-color:#f6f6f6
+}
+
+#foot_box{
+  height:98rpx;
+  width:100%;
+
+  background-color:#ffffff;
+
+}
+
+#foot_box_box{
+  background-color:#fc3b22;
+  float:right;
+  color:#ffffff;
+  font-size:30rpx;
+  width:240rpx;
+  height:100%
+}
+
+#foot_box_box_text{
+  position:relative;
+  top:24rpx;
+  left:55rpx
+}
+
+#foot_totalPrice{
+  float:right;
+  font-size:32rpx;
+  color:#fc3b22;
+  position:relative;
+  right:37rpx;
+  top:27rpx
+}
+
+
+
+#upload_parent{
+  border-top:solid 1rpx #D3D3D3;
+  height:1rpx;
+  background-color:#ffffff;
+  margin-left: 50rpx;
+}
+
+
+.upload {
+  cursor: pointer;
+  margin-left: 20rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1rpx solid #e1e1e1;
+  font-size: 28rpx;
+  width: 100%;
+  height: 140rpx;
+}
+
+.icon {
+  display: inline-block;
+  margin-top: 40rpx;
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: top;
+  margin-right: 24rpx;
+}
+.upload .upload-u .icon {
+  display: inline-block;
+  margin-top: 40rpx;
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: top;
+  margin-right: 24rpx;
+}
+.upload .upload-u .upload-u-t {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 20rpx;
+}
+.upload .upload-u .upload-u-t .t {
+  color: #23ccd2;
+  padding-bottom: 8rpx;
+  margin-bottom: 14rpx;
+  border-bottom: 1rpx solid #23ccd2;
+  width: 194rpx;
+  text-align: center;
+}
+.upload .upload-u .upload-u-t .w {
+  color: #686868;
+  font-size: 24rpx;
+}
+
+.upload .upload-d .t {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 44rpx;
+  color: #fc3b22;
+  padding-bottom: 8rpx;
+  border-bottom: 1rpx solid #fc3b22;
+  width: 194rpx;
+  text-align: center;
+}

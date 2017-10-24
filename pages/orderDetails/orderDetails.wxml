@@ -1,0 +1,175 @@
+
+  <view class = 'line-all'></view>
+  <view id="header" >
+      <!--头部信息-->
+      <view class="" id="header0">
+          <view >
+              <block wx:if = '{{info.pay_status ==0 }}'>
+                    <image src="../../images/oder_xq_pay.png" class="header_text"></image>
+              </block>
+              <block wx:elif = '{{info.pay_status == 9}}'>
+                    <image src="../../images/oder_xq_close.png" class="header_text"></image>
+              </block>
+              <block wx:elif = '{{info.pay_status == 10 || info.pay_status == 11}}'>
+                    <image src="../../images/oder_xq_succ.png" class="header_text"></image>
+              </block>
+               <block wx:else>
+                    <image src="../../images/oder_xq_wait.png" class="header_text"></image>
+              </block>
+              <text class="header_span">{{info.pay_status_name}}</text>  
+          </view>
+          
+          
+      </view>
+  
+      <!--分割线-->
+      <view class="line"></view>
+      
+      <!--姓名电话-->
+      <view  id="header1">
+          <image src="../../images/oder_address.png" id="header1_img" bindtap="getAddress"></image>
+          <view id="header1_div">
+              <view id="header1_div_name" >{{info.name}}</view>
+              <view id="header1_div_tel" >{{info.tel}}</view>
+              <view id="header1_div_address" >{{info.address}}</view>
+          </view>
+      </view>
+      
+  </view>
+    
+  <!--割线-->
+  <view class="blank" ></view>
+  
+  <!--头部信息-->
+  <view id="body_small_box" >
+      <view class="" style="float:left">
+         <image src="../../images/oder_shop.png" id="order_shop"></image>
+      </view>
+      
+      <view class="" id="body_small_text">
+          <text id="app_name">88爱旅行</text>
+          <text id="body_small_text_status">{{info.pay_status_name}}</text>
+      </view>
+  </view>
+
+    
+  <!--产品信息-->
+  <block class='' wx:for="{{data}}">
+      <view class="list clear" >
+        	<view class='list_img'>
+        		  <image src="{{item['title_img']}}" class="img"></image>
+        	</view>
+          <view class="list_right" >
+          		<view class='list_title' >
+        				{{item.title}}
+        			</view>
+        			<block wx:if = '{{item.type == 1}}'>
+        			    <view class='list_start_day'>
+                      {{item["depart_time"]}}
+                  </view>
+        			</block>
+        			 <block wx:if = '{{item.type == 2}}'>
+                    <view class='list_start_day'>
+                      <block wx:if = '{{item["visa_type"] != null}}'>
+                          {{item["visa_type"]}}
+                      </block>
+                      <block wx:if = '{{item["visa_combo"] != null}}'>
+                          :{{item["visa_combo"]}}
+                      </block>
+                    </view>
+                </block>
+        		  
+        		  
+        		  <view class='price_div'>
+        					<text class="discount">￥{{item.price}}</text>
+                  <text class="price">￥{{item.price}}</text>
+                  <text class='num'>X{{item.num}}</text>
+        			</view>
+          </view>
+  </view>
+  
+  <!--上传下载-->
+      <view wx:if = '{{item.type == 2}}' style="background-color:#ffffff;" >
+          
+          <!--<view id="upload_parent" style=""></view>-->
+          <view  class="upload" >
+            <view class = 'upload-u' wx:if = '{{item["pay_status"] !=0}}'  data-orderid = '{{item["order_id"]}}' bindtap = 'goTouploadDetails'>
+                <image src ='../../images/20170711005_60x60.png'  class = 'icon'></image>
+                <view  class =  'upload-u-t'>
+                    <view class = 't'>上传签证模板</view>
+                    <view class = 'w'>需上传签名后的模板图片</view>
+                </view>
+            </view>
+            <view class = 'upload-d' data-src = '{{item.template}}' bindtap = 'downloadTemplate'>
+                <image src ='../../images/20170711004_60x60.png'  class = 'icon'></image>
+                <view class = 't'>下载签证模板</view>
+            </view>
+          </view>
+      </view>
+  </block>
+
+
+<!--底部-->
+<view class='order-info' >
+    <!--留言部分-->
+    <block wx:if ='{{info["_comment"] !=null && info["_comment"] != ""}}'>
+        <view id="leave_box" >
+            <view id="leave">买家留言：</view>
+            <view  id="leave_content" >{{info["_comment"]}}</view>
+        </view>
+        <view class="line"></view>
+    </block>
+    
+    <!--割线-->
+    <!--<view class="line" ></view>-->
+
+    <view class="total_box" >
+        <view class="total_span">
+            <text class="color43">共{{info.length}}件商品</text>
+            <text class="total_sum" style="color:#282828;">合计：￥ {{info.sum}}</text>
+        </view>
+    </view>
+    <!--割线-->
+    <view class="line"></view>
+
+    <view class="total_box" >
+        <view class="total_span">
+            <text class="color43">实付金额</text>
+            <text class="total_sum" style="color:#fc3b22;">￥ {{info.sum}}</text>
+        </view>
+    </view>
+
+
+    <!--订单编号-->
+    <view class="blank" ></view>
+    
+    <view id="order_box">
+        <view id="order_num_box">
+            <text class="order_font">订单编号：{{info["order_id"]}}</text>
+        </view>
+        <view id="order_time_box" style="">
+            <text class="order_font">创建时间：{{info["create_time"]}}</text>
+        </view>
+    </view>
+    
+    <!--联系客服-->
+    
+    <view class="total_box" style="">
+        <button  open-type="contact" id="total_box_center">
+            <image src = '../../images/oder_xq_service.png' id="total_box_img" ></image>
+            <text id="service">联系客服 </text>
+        </button >
+    </view>
+    
+    <!--支付订单-->
+    
+    <view wx:if="{{info['pay_status'] == 0}}">
+        <view class="blank" ></view>
+        <view id="foot_box" style="">
+            <view id="foot_box_box" bindtap = 'gotoPay'>
+                <text id="foot_box_box_text">支付订单</text>
+            </view>
+                <text id="foot_totalPrice">合计：￥{{info.sum}}</text>
+        </view>
+    </view>
+</view>

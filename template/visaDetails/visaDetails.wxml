@@ -1,0 +1,137 @@
+
+<!--签证套餐-->
+
+<template name ='visa-package' style="">
+<view  class='{{select ? "show2" : "none2"}} type_box'>
+    <view class="visa_info">
+      <view class="">
+        <image src="{{imgUrlBase}}{{img}}" class="visa_info_img"></image>
+      </view>
+      <view class="visa_info_box">
+      <image style="float:right;width:88rpx;height:88rpx;position:relative;top:-30rpx" src="../../images/commo_xq_close.png" bindtap="mynone"></image>
+        <view class="visa_info_title">{{title}}</view>
+        <block wx:if ='{{discount != null}}'>
+             <view class="visa_info_discount">{{discount}}</view>
+            <view class="visa_info_price">原价：{{price}}</view>
+        </block>
+         <block wx:else>
+            <view class="visa_info_discount">{{price}}</view>
+        </block>
+        
+      </view>
+    </view>
+    
+    <view class="line"></view>
+    <view class='visa-type'>
+        <view class='visa-type-title'>签证类型</view>
+        <view class='visa-type-type'>
+            <block wx:for = "{{visa_type}}" wx:for-index="i" wx:for-item="t">
+                <view  id="{{i}}" class="type_but {{select_type == i ? 'light' : ''}}" data-type="0"  hover='ture' hover-class="checkednow-c" bindtap="changeType" > {{t.name}} </view>
+            </block>
+            <view  style="display:none">{{select_type}}</view>
+        </view>
+    </view>
+
+    <view class='multiple-detail' hidden="">
+        <view wx:if="{{area_arr[0].name}}">
+            <view class='mdtt'>套餐类型</view>
+            <view class='mdtn'>
+                <block wx:for = "{{area_arr}}" wx:for-index="in" wx:for-item="te">
+                        <view  data-type="0" hover='ture' id="{{in}}"  hover-class="checkednow-c"  bindtap="changeDesType" class="{{select_area == in ? 'light' : ''}}"> {{te.name}} </view>
+                </block>
+                <view  style="display:none">{{select_area}}</view>
+            </view>
+        </view>
+        <view class="line" style="margin:20rpx 20rpx"></view>
+           
+        <view class='add-cut' >
+            <view  class='pn-num-num1'>购买数量:</view>
+            
+            <view class="buy_num_span">
+              <image src="../../images/20170703001_46x46.png" class='pn-num-img prve' bindtap='cutNumber'></image>
+              <span class='buy_num_span-t'>{{num}}</span>
+              <image src="../../images/20170703002_46x46.png" class='pn-num-img next' bindtap='addNumber'></image>
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{foot_name == 'cart'}}" class='foot' bindtap='GoToCart'>
+        <view class='b-btn-a' >加购物车</view>
+        
+    </view>
+    
+   <view wx:else class='foot' bindtap='GoToPay'>
+        <view class='b-btn-a' >立即购买</view>
+    </view>
+
+</view>
+</template>
+
+
+<!--产品活动 挤个位置蹭样式 谢谢-->
+
+<template name ='goods-package' style="">
+<view class='{{select ? "show" : "none"}} type_box'>
+    <view class="visa_info">
+      <view class="">
+        <image src="http://192.168.8.47/shunba/php/travel/Application/uploads/{{img}}" class="visa_info_img"></image>
+      </view>
+      <view class="visa_info_box">
+        <view class="visa_info_title">{{title}}</view>
+        <view class="visa_info_discount">折扣在这里</view>
+        <view class="visa_info_price">{{price}}</view>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class='multiple-detail' hidden="">
+            <!--购买数量-->
+        <view class=''>
+            <span  class='pn-num-num1'>购买v数量:</span>
+            <view class="buy_num_span">
+              <image src="../../images/20170703001_46x46.png" class='pn-num-img prve' bindtap='cutNumber'></image>
+              <span class='pn-num-num'>{{num}}</span>
+              <image src="../../images/20170703002_46x46.png" class='pn-num-img next' bindtap='addNumber'></image>
+            </view>
+        </view>
+    </view>
+</view>
+</template>
+
+
+
+<!--签证内容-->
+<template name = "visa-message">
+    <view class = 'vcm'>
+        <span class = "vcm-i vcm-i-d " ></span>
+        <span>签证国家: {{country}}</span>
+    </view>
+    <view class='vcm'>
+        <span class = "vcm-i vcm-i-l " ></span>
+        <span>签证类型: {{visa_type_name}}</span>
+    </view>
+    <view class = 'vcm'>
+        <span class = "vcm-i vcm-i-d " ></span>
+        <span>入境次数: {{use_number}}</span>
+    </view>
+    <view class = 'vcm'>
+        <span class = "vcm-i vcm-i-l " ></span>
+        <span>停留天数: {{remain_days}}</span>
+    </view>
+    <view class = 'vcm'>
+        <span class = "vcm-i vcm-i-d " ></span>
+        <span>有效期: {{indate}}</span>
+    </view>
+    <view class = 'vcm'>
+        <span class = "vcm-i vcm-i-l " ></span>
+        <span>建议出行: {{advise}}</span>
+    </view>
+    <view class = 'vcm'>
+        <span class = "vcm-i vcm-i-d " ></span>
+        <span>受理范围: {{accept_scope}}</span>
+    </view>
+    <view class = 'vcm'>
+        <span class = "vcm-i vcm-i-l "></span>
+        <span>申请人的户口是上述地区，如果户口不是上述地区，但却在上述地区工作或者学习，请提供上述地区的有效期内的暂住证或者居住复印件</span>
+    </view>
+</template>
+

@@ -1,0 +1,128 @@
+@charset 'utf-8';
+/*
+ * travel  v1.0.0  
+ * copyRight 2017-05-23
+ * */
+
+@import  '../../template/shoppingCart/shoppingCart.wxss';
+
+
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border-style: solid;
+  white-space: nowrap;
+  padding: 19rpx 51rpx;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  border-width: 2rpx;
+  border-radius: 24rpx;
+}
+.btn-default {
+  color: #fc3b22;
+  background-color: #fff;
+  border-color: #fff;
+}
+.border {
+  border: 1px solid #e1e1e1;
+}
+.border-t {
+  border-top: 1px solid #e1e1e1;
+}
+.border-b {
+  border-bottom: 1px solid #e1e1e1;
+}
+page {
+  background-color: #f6f6f6;
+}
+
+.s-top-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    z-index:10;
+    background-color:#fff;
+
+}
+.s-top-container .s-top {
+  width: 100%;
+  height: 88rpx;
+  position: relative;
+  display: flex;
+}
+.s-top-container .s-top .s-btn-a {
+  height: 100%;
+  width: 90rpx;
+  padding: 26rpx 27rpx;
+  box-sizing: border-box;
+}
+.s-top-container .s-top .s-88icon {
+  width: 44rpx;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 22rpx;
+  margin-right: 12rpx;
+}
+.s-top-container .s-top .s-88icon .s-88-img {
+  width: 44rpx;
+  height: 44rpx;
+}
+.s-top-container .s-top .s-title {
+  height: 100%;
+  line-height: 88rpx;
+  color: #282828;
+  font-size: 32rpx;
+}
+.s-top-container .s-top .s-editor {
+  padding: 0 30rpx;
+  height: 100%;
+  line-height: 88rpx;
+  color: #686868;
+  font-size: 28rpx;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+
+.s-btn-nochecked {
+  width: 36rpx;
+  height: 36rpx;
+ border: 2rpx solid #686868;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.s-btn-checked {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #fff;
+  line-height: 36rpx;
+  text-align: center;
+  font-size: 25rpx;
+}
+.gx {
+  width: 100%;
+  height: 20rpx;
+  background-color: #fff;
+  min-height: 20rpx;
+}
+
+.s-item-container{
+    
+    margin-bottom:98rpx;
+
+}
+
+.u{
+    width: 100%;
+    height:108rpx;
+    min-height: 108rpx;
+}

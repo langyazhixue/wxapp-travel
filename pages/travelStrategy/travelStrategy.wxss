@@ -1,0 +1,6 @@
+
+
+@import '../../template/travelStrategy/travelStrategy.wxss';
+page{
+    background-color: #fff !important;
+}

@@ -1,0 +1,69 @@
+
+
+<template name='index_push_travel'>
+    
+    <!--travelProduct-->
+    
+    <block wx:if = "{{type == 1}}">
+        <view class='ip-product' data-link = "{{'../details/details?id='+ id}}" bindtap = 'go' >
+            <image src='{{title_img}}'  class='ip-product-img' />
+            <view class='ip-product-exp'>
+                <view class='ip-pro-title'>{{title}}</view>
+                <view class='ip-pro-introduce'>
+                    <block wx:if = '{{discount != null}}'>
+                         <text class='ip-pro-price'>￥{{discount}}</text>
+                    </block>
+                    
+                    <block wx:else>
+                         <text class='ip-pro-price'>￥{{price}}</text>
+                    </block>
+                    
+                    <text class='ip-pro-num'>{{sale_count}}人付款</text>  
+                </view>
+            </view> 
+        </view>
+    </block>
+    
+    <!--visa-->
+    
+    <block wx:else>
+        <view class='ip-product' data-link = "{{'../visaDetails/visaDetails?id='+ id}}"  bindtap = 'go'>
+            <image src='{{title_img}}'  class='ip-product-img' />
+            <view class='ip-product-exp'>
+                <view class='ip-pro-title'>{{title}}</view>
+                <view class='ip-pro-introduce'>
+                    <block wx:if = '{{discount != null}}'>
+                         <text class='ip-pro-price'>￥{{discount}}</text>
+                    </block>
+                    
+                    <block wx:else>
+                         <text class='ip-pro-price'>￥{{price}}</text>
+                    </block>
+                    <text class='ip-pro-num'>{{sale_count}}人付款</text>  
+                </view>
+            </view> 
+        </view>
+    </block>
+</template>
+
+
+<template name = 'productCategoriesList'>
+    <view class='ip-product' data-link = "{{'../details/details?id='+ id}}" bindtap = 'go' >
+        <image src='{{title_img}}'  class='ip-product-img' />
+        <view class='ip-product-exp'>
+            <view class='ip-pro-title'>{{title}}</view>
+            
+            <view class='ip-pro-introduce'>
+                <block wx:if = '{{dicsount == null && discount != "" }}'>
+                    <text class='ip-pro-price'>￥{{discount}}</text>
+                </block>
+                <block wx:else>
+                    <text class='ip-pro-price'>￥{{price}}</text>
+                </block>
+              
+                <text class='ip-pro-num'>{{sale_count}}人付款</text>  
+            </view>
+        </view> 
+    </view>
+</template>
+

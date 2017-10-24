@@ -1,0 +1,95 @@
+
+@import '../../template/swiper/swiper.wxss';
+
+@import '../../template/priceAndnum/priceAndnum.wxss' ;
+
+@import '../../template/visaDetails/visaDetails.wxss' ;
+
+@import '../../template/address/address.wxss' ;
+
+@import '../../template/buy/buy.wxss' ;
+
+@import '../../template/comment/comment.wxss' ;
+
+.visa-container{
+    padding:20rpx 20rpx 0 20rpx;
+    background-color:#ffffff;
+
+    padding-bottom:30rpx;
+}
+
+.show{
+  display:block;
+}
+.none{
+  display:none;
+}
+
+.temp{
+    text-align: center;
+    width:660rpx;
+    height: 468rpx;
+    display: block;
+    margin-top:20rpx;
+    margin-bottom: 60rpx;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.temp image{
+    width:100%;
+    height: 100%;
+    display: block;
+}
+.to-visa{
+    border-bottom:solid 1rpx #e1e1e1;
+    height:66rpx;
+    padding:20rpx;
+    margin-left:20rpx;
+    line-height: 66rpx;
+}
+
+.visa-mat{
+    background-color:#ffffff;
+    padding:50rpx 0;
+    width:100%;
+}
+.visa-mat .material-exp{
+    width:550rpx;
+    position: relative;
+    margin-left:auto;
+    margin-right:auto;
+    padding:25rpx 45rpx;
+    text-align: center;
+    box-sizing:border-box;
+
+}
+
+.visa-mat .text{
+    color:#282828;
+    font-size: 26rpx;
+    line-height: 32rpx;
+}
+.visa-mat .text-mat11{
+    margin:40rpx 70rpx 20rpx 70rpx;
+    font-size:28rpx;
+    color:#282828;
+    line-height:44rpx;
+
+}
+
+.visa-mat .visa-title{
+    margin-bottom:45rpx;
+    color:#282828;
+    font-size: 28rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+}
+.visa-mat .visa-title .visa-title-l{
+    margin-right: 20rpx;
+}
+
+.visa-mat .visa-title .visa-title-r{
+    margin-left: 20rpx;
+}

@@ -1,0 +1,44 @@
+  
+
+
+<!--<template name = 'footer'>
+   <view id='footer'>
+        <view class="black" id="foot_left">
+          <view class="" id="foot_left_index_box"  bindtap="gos" data-link = "{{'../index/index'}}">
+            <view class=""><image src="../../images/commo_xq_home.png" id="foot_left_index_img"></image></view>
+            <view class="" id="foot_left_index">首页</view>
+          </view>
+
+          <view class="" id="foot_left_cart_box" bindtap="gos" data-link = "{{'../shoppingCart/shoppingCart'}}">
+            <view class="">
+              <image src="../../images/commo_xq_cart.png" id="foot_left_cart_img"></image>
+              <view wx:if="{{shop_cart}}" id="foot_left_cart_num">{{shop_cart}}</view>
+            </view>
+            <view class="" id="foot_left_cart"> 购物车</view>
+          </view>
+        </view>
+        <view class="black" bindtap="GoToCart" id="foot_centre"><text id="foot_centre_text">加入购物车</text></view>
+        <view class='b-btn-b' bindtap='GoToPay' id="foot_right"><text id="foot_right_text">立即购买</text></view>
+    </view>
+</template>-->
+
+
+<template name = 'foot'>
+    <view class = 'foot11'>
+        <view class = 'f-l'>
+            <view  bindtap="gos" data-link = "{{'../index/index'}}" class = 'f-l-l'>
+                <image src="../../images/commo_xq_home.png" class = 'icon'></image>
+                <span>首页</span>
+            </view>
+            <view  bindtap="gos" data-link = "{{'../shoppingCart/shoppingCart'}}" class = 'f-l-l'>
+                <image src="../../images/commo_xq_cart.png" class = 'icon'  ></image>
+                <span>购物车</span>
+                <view wx:if="{{shop_cart}}" class="cart_num">{{shop_cart}}</view>
+            </view>
+        </view>
+        <view  class = 'f-r' bindtap="GoToCart">加入购物车</view>
+        <view  class = 'f-r c' bindtap='GoToPay'>立即购买</view>
+    </view>
+</template>
+
+

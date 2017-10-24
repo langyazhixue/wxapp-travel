@@ -1,0 +1,17 @@
+
+
+<template name = 'visa-list'>
+    <view data-link = '{{"../visaDetails/visaDetails?id="+id}}' bindtap = 'go'>
+        <view class="list" >
+            <view> <image src="{{img}}" class="img"> </image> </view>
+            <view>
+                <view class="title" style=""> {{title}} </view>
+                <view >
+                    <text id="discount" wx:if = '{{discount!= null & discount!= ""}}'>￥{{discount}}</text> 
+                    <text id="price" wx:if = '{{price != null && price != ""}}'>￥{{price}}</text> 
+                </view>
+            </view>
+        </view>
+        <view id="line" ></view>
+  </view>
+</template> 

@@ -1,0 +1,86 @@
+page{
+    background-color:#f6f6f6;
+}
+.ui-dataPicker-wrap{
+    
+    
+}
+
+
+.ui-dataPicker-wrap .ui-dataPicker-header  {
+    padding:0 20rpx;
+    display: flex;
+    height: 50rpx;
+    font-size: 26rpx;
+    background-color: #f0f0f0;
+    line-height: 50rpx;
+    box-sizing:border-box;
+    position:fixed;
+    top:0;
+    left:0;
+    
+}
+
+.ui-dataPicker-wrap .ui-dataPicker-header view {
+    width: 14.28% ;
+    color: #282828 ;
+    text-align: center;
+    
+}
+
+
+
+
+
+.ui-dataPicker-wrap .ui-dataPicker-body{
+   margin-top:50rpx;
+}
+
+
+
+.ui-dataPicker-wrap .ui-dataPicker-body .ui-dataPicker-item{
+    border-bottom: 1px solid #e1e1e1 ;
+}
+
+.ui-dataPicker-wrap .ui-dataPicker-body .ui-dataPicker-item  .ui-dataPicker-item-header{
+    padding: 30rpx 0;
+    color:#282828 ;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+
+.ui-dataPicker-wrap .ui-dataPicker-body  .ui-dataPicker-item-body {
+    display: flex;
+    padding:0 20rpx;
+    flex-wrap: wrap;
+   
+}
+
+.ui-dataPicker-wrap .ui-dataPicker-body  .ui-dataPicker-item-body .item {
+    width: 14.28%;
+    padding:10px 10rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    text-align: center;
+}
+ .ui-dataPicker-wrap .ui-dataPicker-body  .ui-dataPicker-item-body .hover-style-1 {
+    color:#fff;
+ }
+ .ui-dataPicker-wrap .ui-dataPicker-body  .ui-dataPicker-item-body .item-price-d {
+    color:red;
+    font-size: 22rpx;
+ }
+.ui-dataPicker-wrap .ui-dataPicker-body  .ui-dataPicker-item-body .hover-style {
+    background-color: #23ccd2;
+    color:#fff;
+}
+
+.ui-dataPicker-wrap .ui-dataPicker-body  .ui-dataPicker-item-body .item span {
+   display: block;
+   width: 100%;
+}
+
+.ui-dataPicker-wrap .ui-dataPicker-body  .ui-dataPicker-item-body .item .item-price {
+   font-size: 22rpx;
+}

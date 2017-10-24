@@ -1,0 +1,36 @@
+<view class = 'line-all'></view>
+<view class = 'upload'>
+    <view class = 'warning'>
+        <view>1、下载签证申请表</view>
+        <view>2、打印签证申请表</view>
+        <view>3、以照片形式上传填写完整的申请表</view>
+    </view>
+    <view class = 'upload-img'>
+        <view class = 'title'>
+                               上传完整的申请表照片
+        </view >
+        
+        <form  class ='add-img' bindsubmit="formSubmit">
+            <view class = 'add-i'>
+                <view class = 'add' bindtap = 'checkImg'>
+                    <view class = 'add-text'>+</view>
+                </view>
+                
+                <view class = 'img-item' wx:if = '{{imgList != null && imgList.length !=0}}'  wx:for = "{{imgList}}">
+                    <image  src = '{{item}}' class = 'img-img' data-src ='{{item}}'bindtap='preview' ></image>
+                    <span class='delete' data-index ='{{index}}' bindtap = 'deleteImg'>x</span>
+                </view>
+                
+            </view>
+            
+            <view class = 'submit'>
+                <button formType="submit">提交</button>
+            </view>
+            
+        </form>
+        
+        
+    </view>
+</view>
+
+

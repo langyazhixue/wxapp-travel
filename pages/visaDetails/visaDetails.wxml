@@ -1,0 +1,64 @@
+<!--模板-->
+<import src = '../../template/swiper/swiper.wxml'/>
+
+<import src = '../../template/priceAndnum/priceAndnum.wxml'/>
+
+<import src = '../../template/visaDetails/visaDetails.wxml'/>
+
+<import src = '../../template/address/address.wxml'/>
+
+<import src = '../../template/buy/buy.wxml'/>
+
+<import src = '../../template/comment/comment.wxml'/>
+
+<!--轮播图-->
+<view class = 'line-all'></view>
+<scroll-view  scroll-y   style = "height:{{windowHeight+'px'}}" >
+    <template is = 'swiper' data ='{{swiperConfig:swiperConfig,banner:slideshow}}'></template>
+    <view class='visa-container'>
+        <template is = 'priceAndnum-visa' data = '{{titleData: data.title, price:min_price, discount:min_discount, num: orderNum}}' ></template>
+        
+        <view  class = 'to-visa' bindtap="myshow">
+            <text style="font-size:28rpx;color:#282828;">签证类型</text>
+            <image src="../../images/act_choose.png" style="width:20rpx;height:20rpx;;margin-left:20rpx"></image>
+        </view>
+        <template is = 'visa-message' data='{{country:data.country, visa_type_name:data.visa_type[0].name, use_number:data.visa_type[0].use_number, remain_days:data.visa_type[0].days, indate:data.visa_type[0].indate, advise:data.visa_type[0].advise,accept_scope:data.visa_type[0].scope}}' ></template>
+    </view>
+
+    <block wx:if = '{{ comment != null}}'>
+        <template is = 'comment' data="{{length:comment.comment_num,user_name:comment.user_name,comment:comment.content,img:comment.img,goods_type:goods_type,goods_id:goods_id}}"></template>
+    </block>
+    <view class = 'visa-mat' >
+        <view  class = 'visa-title'>
+            <span class = 'visa-title-l'>——</span>
+            <span>所需材料</span>
+            <span class = 'visa-title-r'>——</span>
+        </view>
+        
+        <view class = 'material-exp'>
+            <view class = 't-c tl-t'></view>
+            <view class = 't-c tr-t'></view>
+            <view class = 't-c tl-b'></view>
+            <view class = 't-c tr-b'></view>
+            <view class = 'text'>
+                                实际材料以商家通知为主，且领馆有权要求申请人提供更多资料！
+            </view>
+        </view>
+        <view class="text-mat11"><text>{{data.visa_type[0].material}}</text></view>
+        <view class = 'temp' data-src = 'https://travel.babawifi.com/visa_table.jpg' bindtap = '_previewImage'>
+            <image src = '../../images/visa_table.jpg'></image>
+        </view>
+    </view>
+    
+    <template is = 'address'></template>
+    <view class=""><image src="../../images/visa_refunds.jpg" style="width:100%;height:560rpx"></image></view>
+    <view class="" style="width:100%;height:110rpx"></view>
+
+</scroll-view>
+
+
+<template is = 'visa-package' data = '{{visa_type:data.visa_type,select:select,select_type:select_type,select_area:select_area,area_arr:area_arr,num:num,discount:discount,price:price,img:data.title_img,title:data.title,imgUrlBase:imgUrlBase,foot_name:foot_name}}'></template>
+
+<view class='{{select ? "show" : "none"}}'  style="background-color:#000;overflow:hidden;position:fixed;width:{{windowWidth}}px;height:{{windowHeight}}px;z-index:3;top:0;opacity:0.7"></view>
+
+<template is = 'foot' data="{{shop_cart:shop_cart,sum:sum}}"></template>

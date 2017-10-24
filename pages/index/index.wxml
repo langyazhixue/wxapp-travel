@@ -1,0 +1,112 @@
+
+    
+<!--使用模板-->
+<import src = '../../template/index_push/index_push.wxml'/>
+<import src = '../../template/index_items/index_items.wxml'/>
+<import src = '../../template/swiper/swiper.wxml'/>
+
+
+
+
+<!--授权情况-->
+<view class = 'line-all'></view>
+<block wx:if = '{{data.error == 1}}'>
+    <view class = 'error'>
+        <image src = '../../images/20170711007_194x194.png'></image>
+        <view>数据加载失败</view>         
+    </view>
+    </block>
+
+    <block wx:elif = '{{data.error == 0}}'>
+        <block wx:if = '{{data.data == null }}'>
+            <view class = 'error'>
+                <image src = '../../images/20170711003_194x194.png'></image>
+                <view>数据为空</view>
+            </view>
+        </block>
+        
+        <block wx:else>
+            <!--swiper-->
+            <block wx:if = '{{data.data.banner != null}}'>
+                <view class = 'section-swiper'>
+                    <swiper indicator-dots = "{{swiperConfig.indicatorDots}}" autoplay = "{{swiperConfig.autoplay}}" interval = "{{swiperConfig.interval}}" 
+                    duration = "{{swiperConfig.duration}}" class = 'visa-img' indicator-color = "{{swiperConfig.indicatorColor}}" indicator-active-color = "{{swiperConfig.indicatorActiveColor}}" 
+                    circular = "{{swiperConfig.circular}}">
+                    <block wx:for = "{{data.data.banner}}">
+                        <block wx:if = '{{item.link != "" && item.link != null && item.extra != "" && item.extra != null}}'>
+                            <swiper-item data-link = "{{item.link+'?'+item.extra}}" bindtap = 'go'>
+                                <image src = "{{item.img}}" class = "visa-img-img slide-image" />
+                            </swiper-item>
+                        </block>
+                        <block wx:else>
+                            <swiper-item data-link = "{{item.link+'?'+item.extra}}">
+                                <image src = "{{item.img}}" class = "visa-img-img slide-image" />
+                            </swiper-item>
+                        </block>
+                        
+                      </block>
+                    </swiper>
+                </view>
+            </block>
+    
+            <!--section-items-->
+    
+            <block wx:if = '{{data.data.items != null}}'>
+                <view class='section-items'>
+                    <!--more than four-->
+                    
+                    <block wx:if  = '{{data.data.items.length > 3}}'>
+                        <view   class = 'ii-items'>
+                            <block wx:for = '{{data.data.items}}'>
+                               <template is ='index-items-morethanfour' data = '{{...item}}'></template>
+                            </block>
+                            
+                            <!--添加上在线咨询-->
+                            <view class = 'ii-trvel-icon-item'>
+                                <button  open-type="contact" class='ii-b-c' >
+                                    <image src = '../../images/20170712002_104x104.png' class='ii-tiim' ></image>
+                                    <text>在线咨询</text>
+                                </button>
+                            </view>
+                            
+                        </view>
+                    </block>
+                    
+                    <!--less than four-->
+                    
+                    <block wx:else>
+                        <view class = 'ii-items-1'>
+                            <block wx:for = '{{data.data.items}}'>
+                               <template is = 'index-items-lessthanfour' data = '{{...item}}'></template>
+                            </block>
+                           
+                           <!--添加上在线咨询-->
+                           <view class ='trvel-icon-item-1'>
+                                <button  open-type="contact" class='ii-b-c' data-link = "{{link+'?id='+id}}" bindtap = 'go'>
+                                    <image src = '../../images/20170712002_104x104.png' class='ii-tiim' ></image>
+                                    <text>在线咨询</text>
+                                </button>
+                            </view>
+                        </view>
+                    </block>
+                    
+                </view>
+            </block>
+    
+            <!--index-push-->
+    
+            <block wx:if = '{{data.data.push != null}}'>
+                <view class='push'>
+                    <block wx:for = '{{data.data.push}}'>
+                        <template is = 'index_push_travel' data = '{{...item}}'></template>
+                    </block>
+                </view>
+            </block>
+    </block>
+</block>
+
+
+
+
+
+

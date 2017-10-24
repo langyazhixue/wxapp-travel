@@ -1,0 +1,88 @@
+
+<!--订单列表模板-->
+
+<!--template-->
+<template name='order'>
+    <view class = 'order-main' >
+        
+        <!--头部-->
+        <view class = 'top'>
+            <view>{{create_time}}</view>
+            <view>订单号：{{order_id}}</view>
+        </view>
+        
+        <!--主体部分-->
+        <view class = 'main' data-index = "{{index}}" bindtap = 'goToorderDetails'>
+            <image src = '{{title_img}}' class = 'main-icon'></image>
+            <view class = 'main-main'>
+                <view class = 'title'>{{title}}</view>
+                
+                <block wx:if = '{{type == 1}}'>
+                    <view class = 'time-area'>{{depart_time}}</view>
+                </block>
+                
+                <block wx:if = '{{type == 2}}'>
+                    <view class = 'time-area'>
+                        
+                        <block wx:if = '{{visa_type != null}}'>
+                            {{visa_type}}
+                        </block>
+                        <block wx:if = '{{visa_combo != null}}'>
+                            :{{visa_combo}}
+                        </block>
+                    </view>
+                </block>
+                
+                <view class = 'p-n'>
+                    <view class = 'price'>￥{{price}}</view>
+                    <view class = 'count'>X{{num}}</view>
+                    
+                </view>
+                
+            </view>
+        </view>
+        
+        <!--上传下载-->
+        <view class = 'upload' wx:if = '{{type == 2}}'>
+            <view class = 'upload-u' wx:if = '{{pay_status != 0}}' data-orderid = "{{order_id}}" bindtap = 'goTouploadDetails'>
+                <image src ='../../images/20170711005_60x60.png'  class = 'icon'></image>
+                
+                <view  class =  'upload-u-t'>
+                    <view class = 't'>上传签证模板</view>
+                    <view class = 'w'>需上传签名后的模板图片</view>
+                </view>
+                
+            </view>
+            
+            <view class = 'upload-d' data-src = '{{template}}' catchtap = 'downloadTemplate'>
+                <image src ='../../images/20170711004_60x60.png'  class = 'icon'></image>
+                <view class = 't'>下载签证模板</view>
+            </view>
+        </view>
+        
+        <!--商品数量-->
+        <view class = 'more'>
+            <view class = 'icon'>
+                <image src ='../../images/20170711002_58x80.png' style = 'width:58rpx;height:80rpx'  data-index = '{{index}}' data-paystatus = '{{pay_status}}' data-orderid = "{{order_id}}"  wx:if = "{{pay_status =='0'||pay_status =='9'||pay_status =='10'||pay_status =='11'}}" bindtap = 'deleteOrder'></image>
+            </view>
+            <view class = 'count' data-index = "{{index}}"  bindtap = 'goToorderDetails'>
+                <text class = 'num'>共{{length}}件商品</text>
+                <text>合计：￥{{sum_all}}</text>
+            </view>
+        </view>
+        
+        <!--状态-->
+        <view class = 'foot'>
+            <view class='status '>{{pay_status_name}}</view>
+            <view class = 'b'>
+                <button class = 'default' open-type = 'contact'>联系客服</button>
+                <button class ='r' wx:if = '{{pay_status == "10"}}'  data-index ='{{index}}'  data-orderid = '{{order_id}}' bindtap = "goTocomment">评价</button>
+                <button class ='r' wx:if = '{{pay_status == "0"}}'  data-index = "{{index}}"  bindtap = 'goToorderDetails'>付款</button>
+            </view>
+            
+        </view>
+        
+        <!--割线-->
+        <view class ='l'></view>   
+    </view>
+</template>
